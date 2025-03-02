@@ -1,7 +1,8 @@
-import "./styles/App.css";
+import "@/styles/App.css";
+import NasaRouter from "@/router/NasaRouter";
 
 function App() {
-    return <></>;
+    return <NasaRouter />;
 }
 
 export default App;
