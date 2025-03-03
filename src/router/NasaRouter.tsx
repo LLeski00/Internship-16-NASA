@@ -9,24 +9,25 @@ import {
     DetailsPage,
     NotFoundPage,
 } from "@/pages";
+import { routes } from "@/constants/routes";
 
 const NasaRouter = () => {
     return (
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<MainLayout />}>
-                    <Route path="" element={<HomePage />} />
-                    <Route path="apod" element={<ApodGalleryPage />} />
+                    <Route path={routes.HOME} element={<HomePage />} />
+                    <Route path={routes.APOD} element={<ApodGalleryPage />} />
                     <Route
-                        path="mars-rover"
+                        path={routes.MARS_ROVER}
                         element={<MarsRoverPhotosPage />}
                     />
-                    <Route path="neo" element={<NeoTrackerPage />} />
+                    <Route path={routes.NEO} element={<NeoTrackerPage />} />
                     <Route
-                        path="earth-imagery"
+                        path={routes.EARTH_IMAGERY}
                         element={<EarthImageryPage />}
                     />
-                    <Route path="details" element={<DetailsPage />} />
+                    <Route path={routes.DETAILS} element={<DetailsPage />} />
                     <Route path="*" element={<NotFoundPage />} />
                 </Route>
             </Routes>
