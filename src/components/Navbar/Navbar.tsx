@@ -1,11 +1,14 @@
 import { Link } from "react-router-dom";
 import "@/components/Navbar/Navbar.css";
 import { routes } from "@/constants/routes";
+import { useTheme } from "@/hooks";
 
 const Navbar = () => {
+    const { isDarkTheme } = useTheme();
+
     return (
-        <nav>
-            <h1>NASA Explore</h1>
+        <nav className={isDarkTheme ? "dark-theme" : "light-theme"}>
+            <h1>NASA Explorer</h1>
             <div className="navbar-links">
                 <Link to={routes.HOME.path}>Home</Link>
                 <Link to={routes.APOD.path}>APOD</Link>
