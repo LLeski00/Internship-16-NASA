@@ -1,6 +1,8 @@
 :root {
-    --dark-theme-background-color: black;
+    --dark-theme-background-color: rgb(10, 10, 10);
     --light-theme-background-color: white;
     --dark-theme-color: black;
     --light-theme-color: white;
+    --nasa-blue-color: rgb(0, 50, 160);
+    --nasa-red-color: rgb(255, 23, 0);
 }
