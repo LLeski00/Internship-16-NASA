@@ -16,18 +16,27 @@ const NasaRouter = () => {
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<MainLayout />}>
-                    <Route path={routes.HOME} element={<HomePage />} />
-                    <Route path={routes.APOD} element={<ApodGalleryPage />} />
+                    <Route path={routes.HOME.path} element={<HomePage />} />
                     <Route
-                        path={routes.MARS_ROVER}
+                        path={routes.APOD.path}
+                        element={<ApodGalleryPage />}
+                    />
+                    <Route
+                        path={routes.MARS_ROVER.path}
                         element={<MarsRoverPhotosPage />}
                     />
-                    <Route path={routes.NEO} element={<NeoTrackerPage />} />
                     <Route
-                        path={routes.EARTH_IMAGERY}
+                        path={routes.NEO.path}
+                        element={<NeoTrackerPage />}
+                    />
+                    <Route
+                        path={routes.EARTH_IMAGERY.path}
                         element={<EarthImageryPage />}
                     />
-                    <Route path={routes.DETAILS} element={<DetailsPage />} />
+                    <Route
+                        path={routes.DETAILS.path}
+                        element={<DetailsPage />}
+                    />
                     <Route path="*" element={<NotFoundPage />} />
                 </Route>
             </Routes>

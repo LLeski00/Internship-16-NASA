@@ -1,3 +1,4 @@
+import NavigationCardList from "@/components/NavigationCardList/NavigationCardList";
 import { useTheme } from "@/hooks";
 
 const HomePage = () => {
@@ -6,6 +7,7 @@ const HomePage = () => {
     return (
         <div className="home-page">
             <button onClick={toggleTheme}>Switch theme</button>
+            <NavigationCardList />
         </div>
     );
 };
