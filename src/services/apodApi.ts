@@ -48,9 +48,18 @@ async function getLatestApodImages(): Promise<ImageData[]> {
     return getImagesDataFromResponse(response);
 }
 
-async function getApodImages(startDate: Date): Promise<ImageData[]> {
-    const dateString: string = getDateString(startDate);
-    const api = APOD_API_URL + "&start_date=" + dateString;
+async function getApodImages(
+    startDate: Date,
+    endDate: Date
+): Promise<ImageData[]> {
+    const startDateString: string = getDateString(startDate);
+    const endDateString: string = getDateString(endDate);
+    const api =
+        APOD_API_URL +
+        "&start_date=" +
+        startDateString +
+        "&end_date=" +
+        endDateString;
     const response: ApodResponse[] = await fetchApodImages(api);
     return getImagesDataFromResponse(response);
 }

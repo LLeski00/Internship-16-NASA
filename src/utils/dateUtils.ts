@@ -8,9 +8,20 @@ function getDateString(date: Date): string {
     return date.toISOString().split("T")[0];
 }
 
-const isDateStringValid = (dateString: string): boolean => {
+function isDateStringValid(dateString: string): boolean {
     const date = new Date(dateString);
     return !isNaN(date.getTime());
-};
+}
 
-export { createRecentDateString, getDateString, isDateStringValid };
+function getDateFromNow(days: number): Date {
+    const date = new Date();
+    date.setDate(date.getDate() + days);
+    return date;
+}
+
+export {
+    createRecentDateString,
+    getDateString,
+    isDateStringValid,
+    getDateFromNow,
+};
