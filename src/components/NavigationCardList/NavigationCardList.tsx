@@ -4,7 +4,7 @@ import "@/components/NavigationCardList/NavigationCardList.css";
 
 const NavigationCardList = () => {
     const navigationRoutes = Object.values(routes).filter(
-        (route) => route !== routes.HOME && route !== routes.NOT_FOUND
+        (route) => route.isMainRoute && route !== routes.HOME
     );
 
     return (

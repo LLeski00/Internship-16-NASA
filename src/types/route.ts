@@ -3,6 +3,7 @@ type RouteData = {
     name: string;
     description: string;
     image: string;
+    isMainRoute: boolean;
 };
 
 type Routes = {

@@ -42,7 +42,10 @@ const NasaRouter = () => {
                         path={routes.IMAGE_DETAILS.path}
                         element={<ImageDetailsPage />}
                     />
-                    <Route path="*" element={<NotFoundPage />} />
+                    <Route
+                        path={routes.NOT_FOUND.path}
+                        element={<NotFoundPage />}
+                    />
                 </Route>
             </Routes>
         </BrowserRouter>
