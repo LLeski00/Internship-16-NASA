@@ -14,7 +14,11 @@ const ImageCard: FC<ImageCardProps> = ({ data }) => {
     return (
         <img
             className="image-card"
-            onClick={() => navigate(`${routes.IMAGE_DETAILS}/${data.date}`)}
+            onClick={() =>
+                navigate(
+                    `/${routes.IMAGE_DETAILS.path.split("/")[1]}/${data.date}`
+                )
+            }
             src={data.url}
             alt={data.title}
         ></img>

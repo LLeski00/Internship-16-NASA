@@ -5,3 +5,4 @@ export { default as HomePage } from "@/pages/HomePage/HomePage";
 export { default as MarsRoverPhotosPage } from "@/pages/MarsRoverPhotosPage/MarsRoverPhotosPage";
 export { default as NeoTrackerPage } from "@/pages/NeoTrackerPage/NeoTrackerPage";
 export { default as NotFoundPage } from "@/pages/NotFoundPage/NotFoundPage";
+export { default as ImageDetailsPage } from "@/pages/ImageDetailsPage/ImageDetailsPage";

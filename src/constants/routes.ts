@@ -36,6 +36,12 @@ const routes: Routes = {
         description: "Earth Imagery",
         image: earthImage,
     },
+    IMAGE_DETAILS: {
+        path: "/images/:date",
+        name: "Image details",
+        description: "Details of an image",
+        image: "",
+    },
     DETAILS: {
         path: "/details",
         name: "Details",

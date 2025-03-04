@@ -8,6 +8,7 @@ import {
     EarthImageryPage,
     DetailsPage,
     NotFoundPage,
+    ImageDetailsPage,
 } from "@/pages";
 import { routes } from "@/constants/routes";
 
@@ -36,6 +37,10 @@ const NasaRouter = () => {
                     <Route
                         path={routes.DETAILS.path}
                         element={<DetailsPage />}
+                    />
+                    <Route
+                        path={routes.IMAGE_DETAILS.path}
+                        element={<ImageDetailsPage />}
                     />
                     <Route path="*" element={<NotFoundPage />} />
                 </Route>

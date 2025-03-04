@@ -1,7 +1,7 @@
 import { ApodResponse } from "@/types/apod";
 import { ImageData } from "@/types/image";
 
-function getImagesFromResponse(response: ApodResponse[]) {
+function getImagesDataFromResponse(response: ApodResponse[]): ImageData[] {
     const responseImages: ApodResponse[] = response.filter(
         (image) => image.media_type === "image"
     );
@@ -18,4 +18,8 @@ function getImagesFromResponse(response: ApodResponse[]) {
     return images;
 }
 
-export { getImagesFromResponse };
+function getImageDataFromResponse(response: ApodResponse): ImageData {
+    return { title: response.title, date: response.date, url: response.url };
+}
+
+export { getImagesDataFromResponse, getImageDataFromResponse };
