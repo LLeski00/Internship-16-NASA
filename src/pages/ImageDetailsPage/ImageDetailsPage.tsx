@@ -20,9 +20,15 @@ const ImageDetailsPage = () => {
     }
 
     return (
-        <div className="image-details">
-            <img src={image?.url} alt={image?.title} />
-        </div>
+        <>
+            {image && (
+                <div className="image-details">
+                    <img src={image.url} alt={image.title} />
+                    <h2>{image.title}</h2>
+                    <p>{image.explanation}</p>
+                </div>
+            )}
+        </>
     );
 };
 

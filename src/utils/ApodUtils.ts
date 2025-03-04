@@ -13,13 +13,19 @@ function getImagesDataFromResponse(response: ApodResponse[]): ImageData[] {
             title: image.title,
             date: image.date,
             url: image.url,
+            explanation: image.explanation,
         };
     });
     return images;
 }
 
 function getImageDataFromResponse(response: ApodResponse): ImageData {
-    return { title: response.title, date: response.date, url: response.url };
+    return {
+        title: response.title,
+        date: response.date,
+        url: response.url,
+        explanation: response.explanation,
+    };
 }
 
 export { getImagesDataFromResponse, getImageDataFromResponse };
