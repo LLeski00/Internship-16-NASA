@@ -15,7 +15,6 @@ const Navbar = () => {
                 <Link to={routes.MARS_ROVER.path}>Mars Rover</Link>
                 <Link to={routes.EARTH_IMAGERY.path}>Earth Imagery</Link>
                 <Link to={routes.NEO.path}>NEO</Link>
-                <Link to={routes.DETAILS.path}>Details</Link>
             </div>
         </nav>
     );

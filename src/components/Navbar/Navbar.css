@@ -6,6 +6,7 @@ nav {
     position: sticky;
     top: 0;
     padding-inline: 30px;
+    z-index: 1;
 }
 
 .navbar-links {
