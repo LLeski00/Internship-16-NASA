@@ -3,9 +3,13 @@ import { NavigationCard } from "@/components";
 import "@/components/NavigationCardList/NavigationCardList.css";
 
 const NavigationCardList = () => {
+    const navigationRoutes = Object.values(routes).filter(
+        (route) => route !== routes.HOME && route !== routes.NOT_FOUND
+    );
+
     return (
         <div className="navigation-card-list">
-            {Object.values(routes).map((route) => (
+            {navigationRoutes.map((route) => (
                 <NavigationCard key={route.name} data={route} />
             ))}
         </div>

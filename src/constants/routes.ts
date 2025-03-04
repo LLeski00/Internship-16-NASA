@@ -1,15 +1,11 @@
-export type RouteData = {
-    path: string;
-    name: string;
-    description: string;
-    image: string;
-};
+import { Routes } from "@/types/route";
+import apodImage from "@/assets/images/solar-eclipse.jpg";
+import marsRoverImage from "@/assets/images/mars-rover.jpg";
+import neoImage from "@/assets/images/asteroid.jpg";
+import earthImage from "@/assets/images/earthHQ.jpg";
+import detailsImage from "@/assets/images/rocketship.jpg";
 
-type Routes = {
-    [key: string]: RouteData;
-};
-
-export const routes: Routes = {
+const routes: Routes = {
     HOME: {
         path: "/",
         name: "Home",
@@ -20,30 +16,32 @@ export const routes: Routes = {
         path: "/apod",
         name: "Astronomy Picture of the Day (APOD)",
         description: "APOD page",
-        image: "",
+        image: apodImage,
     },
     MARS_ROVER: {
         path: "/mars-rover",
         name: "Mars Rover Photos",
         description: "Photos taken by the Rover on Mars",
-        image: "",
+        image: marsRoverImage,
     },
     NEO: {
         path: "/neo",
         name: "Near Earth Objects (NEO) Tracker",
         description: "Near Earth Objects (NEO) Tracker",
-        image: "",
+        image: neoImage,
     },
     EARTH_IMAGERY: {
         path: "/earth-imagery",
         name: "Earth Imagery",
         description: "Earth Imagery",
-        image: "",
+        image: earthImage,
     },
     DETAILS: {
         path: "/details",
         name: "Details",
         description: "Details about the objects of the app",
-        image: "",
+        image: detailsImage,
     },
 };
+
+export { routes };
