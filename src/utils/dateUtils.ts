@@ -13,15 +13,22 @@ function isDateStringValid(dateString: string): boolean {
     return !isNaN(date.getTime());
 }
 
-function getDateFromNow(days: number): Date {
-    const date = new Date();
-    date.setDate(date.getDate() + days);
-    return date;
+function getDateWithOffset(date: Date, days: number): Date {
+    const offsetDate = date;
+    offsetDate.setDate(offsetDate.getDate() + days);
+    return offsetDate;
+}
+
+function getDifferenceInDaysFromTwoDates(date1: Date, date2: Date): number {
+    const diff = Math.abs(date1.getTime() - date2.getTime());
+    const days = Math.ceil(diff / (1000 * 3600 * 24));
+    return days;
 }
 
 export {
     createRecentDateString,
     getDateString,
     isDateStringValid,
-    getDateFromNow,
+    getDateWithOffset,
+    getDifferenceInDaysFromTwoDates,
 };
