@@ -1,4 +1,5 @@
 import { RoverCameraFilter, RoverFilter } from "@/components";
+import MarsRoverGallery from "@/components/MarsRoverGallery/MarsRoverGallery";
 
 const MarsRoverPhotosPage = () => {
     return (
@@ -14,6 +15,7 @@ const MarsRoverPhotosPage = () => {
             </p>
             <RoverFilter />
             <RoverCameraFilter />
+            <MarsRoverGallery />
         </div>
     );
 };

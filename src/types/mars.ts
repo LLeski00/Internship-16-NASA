@@ -21,9 +21,29 @@ type RoverResponse = {
     rovers: Rover[];
 };
 
+type RoverImageResponse = {
+    photos: RoverImageData[];
+};
+
+type RoverImageData = {
+    camera: Camera;
+    earth_date: string;
+    id: number;
+    img_src: string;
+    rover: Rover;
+    sol: number;
+};
+
 type RoverFilterType = {
     rover: string;
     camera: string;
 };
 
-export { Rover, Camera, RoverResponse, RoverFilterType };
+export {
+    Rover,
+    Camera,
+    RoverResponse,
+    RoverImageResponse,
+    RoverImageData,
+    RoverFilterType,
+};

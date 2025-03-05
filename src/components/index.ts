@@ -8,3 +8,4 @@ export { default as ApodGallery } from "@/components/ApodGallery/ApodGallery";
 export { default as DateFilter } from "@/components/DateFilter/DateFilter";
 export { default as RoverCameraFilter } from "@/components/RoverCameraFilter/RoverCameraFilter";
 export { default as RoverFilter } from "@/components/RoverFilter/RoverFilter";
+export { default as MarsRoverGallery } from "@/components/MarsRoverGallery/MarsRoverGallery";
