@@ -1,11 +1,14 @@
 import "@/styles/App.css";
 import NasaRouter from "@/router/NasaRouter";
 import { ThemeProvider } from "./contexts/theme";
+import { MarsRoverProvider } from "./contexts/mars-rover";
 
 function App() {
     return (
         <ThemeProvider>
-            <NasaRouter />
+            <MarsRoverProvider>
+                <NasaRouter />
+            </MarsRoverProvider>
         </ThemeProvider>
     );
 }

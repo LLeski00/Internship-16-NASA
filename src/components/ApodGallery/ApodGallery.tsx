@@ -45,8 +45,7 @@ const ApodGallery: FC<ApodGalleryProps> = ({ dateFilter }) => {
     }
 
     function handleInfiniteScroll() {
-        if (dateFilter && dateRef.current < dateFilter?.startDate) return;
-
+        if (dateFilter && dateRef.current < dateFilter.startDate) return;
         loadImages();
     }
 

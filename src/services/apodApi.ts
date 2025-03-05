@@ -3,7 +3,7 @@ import { ImageData } from "@/types/image";
 import {
     getImageDataFromResponse,
     getImagesDataFromResponse,
-} from "@/utils/ApodUtils";
+} from "@/utils/apodUtils";
 import { getDateString } from "@/utils/dateUtils";
 
 const APOD_API_URL =

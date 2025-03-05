@@ -2,7 +2,7 @@ import { FC, PropsWithChildren, useEffect, useState } from "react";
 import { ThemeContext } from "./ThemeContext";
 
 export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
-    const [isDarkTheme, setIsDarkTheme] = useState<boolean>(true);
+    const [isDarkTheme, setIsDarkTheme] = useState<boolean>(false);
 
     useEffect(() => {
         document.body.className = isDarkTheme ? "dark-theme" : "light-theme";

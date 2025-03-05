@@ -2,7 +2,7 @@ import { ApodGallery, DateFilter } from "@/components";
 import "./ApodGalleryPage.css";
 import { LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { DateFilterType } from "@/types/filter";
 
 const ApodGalleryPage = () => {
