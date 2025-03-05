@@ -6,8 +6,6 @@ function getImagesDataFromResponse(response: ApodResponse[]): ImageData[] {
         (image) => image.media_type === "image"
     );
 
-    if (responseImages.length === 0) return [];
-
     const images: ImageData[] = responseImages.map((image) => {
         return {
             title: image.title,

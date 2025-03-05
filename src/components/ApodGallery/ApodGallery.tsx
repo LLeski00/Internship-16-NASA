@@ -1,15 +1,11 @@
 import { ImageCard } from "@/components";
-import { getApodImages, getLatestApodImages } from "@/services/apodApi";
 import { ImageData } from "@/types/image";
 import { FC, useEffect, useRef, useState } from "react";
 import "./ApodGallery.css";
 import { useInView } from "react-intersection-observer";
 import { DateFilterType } from "@/types/filter";
-import {
-    getDateString,
-    getDateWithOffset,
-    getDifferenceInDaysFromTwoDates,
-} from "@/utils/dateUtils";
+import { getApodImages } from "@/services/apodApi";
+import { getDateWithOffset } from "@/utils/dateUtils";
 
 interface ApodGalleryProps {
     dateFilter: DateFilterType | undefined;
@@ -18,73 +14,40 @@ interface ApodGalleryProps {
 const ApodGallery: FC<ApodGalleryProps> = ({ dateFilter }) => {
     const [images, setImages] = useState<ImageData[]>([]);
     const { ref, inView } = useInView();
-    const dateCounter = useRef<Date>(getDateWithOffset(new Date(), -19));
+    const dateRef = useRef<Date>(new Date());
 
     useEffect(() => {
-        if (dateFilter) {
-            dateCounter.current = new Date(dateFilter.endDate);
-            filterImages(dateFilter);
-        } else loadLatestImages();
+        if (dateFilter) dateRef.current = dateFilter.endDate;
+        loadImages(true);
     }, [dateFilter]);
 
     useEffect(() => {
         if (inView) handleInfiniteScroll();
     }, [inView]);
 
-    async function loadLatestImages() {
-        const images: ImageData[] = await getLatestApodImages();
-        setImages(images);
+    async function loadImages(firstLoad: boolean = false) {
+        const startDate: Date = getStartDate(dateRef.current);
+        const newImages: ImageData[] = await getApodImages(
+            startDate,
+            dateRef.current
+        );
+        firstLoad ? setImages(newImages) : setImages([...images, ...newImages]);
+        dateRef.current = getDateWithOffset(dateRef.current, -21);
     }
 
-    async function loadImages(startDate: Date, endDate: Date) {
-        const newImages: ImageData[] = await getApodImages(startDate, endDate);
-        setImages([...images, ...newImages]);
+    function getStartDate(endDate: Date) {
+        const offsetDate = getDateWithOffset(endDate, -20);
+
+        if (dateFilter && offsetDate < dateFilter.startDate)
+            return dateFilter.startDate;
+
+        return offsetDate;
     }
 
     function handleInfiniteScroll() {
-        if (
-            dateFilter !== undefined &&
-            dateCounter.current < dateFilter.startDate
-        )
-            return;
+        if (dateFilter && dateRef.current < dateFilter?.startDate) return;
 
-        dateCounter.current.setDate(dateCounter.current.getDate() - 20);
-
-        if (
-            dateFilter !== undefined &&
-            dateCounter.current < dateFilter.startDate
-        ) {
-            const endDate: Date = new Date(dateFilter.startDate);
-            const dayDifference: number = getDifferenceInDaysFromTwoDates(
-                dateFilter.startDate,
-                dateCounter.current
-            );
-            endDate.setDate(endDate.getDate() + 19 - dayDifference);
-            loadImages(dateFilter.startDate, endDate);
-            return;
-        }
-
-        const endDate: Date = new Date(dateCounter.current);
-        endDate.setDate(endDate.getDate() + 19);
-        loadImages(dateCounter.current, endDate);
-    }
-
-    async function filterImages(dateFilter: DateFilterType) {
-        dateCounter.current.setDate(dateCounter.current.getDate() - 20);
-
-        if (dateFilter.startDate > dateCounter.current) {
-            const newImages: ImageData[] = await getApodImages(
-                dateFilter.startDate,
-                dateFilter.endDate
-            );
-            setImages(newImages);
-        } else {
-            const newImages: ImageData[] = await getApodImages(
-                dateCounter.current,
-                dateFilter.endDate
-            );
-            setImages(newImages);
-        }
+        loadImages();
     }
 
     return (

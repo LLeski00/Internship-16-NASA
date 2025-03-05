@@ -8,10 +8,6 @@ import { DateFilterType } from "@/types/filter";
 const ApodGalleryPage = () => {
     const [dateFilter, setDateFilter] = useState<DateFilterType>();
 
-    useEffect(() => {
-        console.log(dateFilter);
-    }, [dateFilter]);
-
     return (
         <div className="apod-gallery-page">
             <h1>Astronomy Picture of the Day (APOD) Gallery</h1>

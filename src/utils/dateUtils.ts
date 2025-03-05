@@ -1,9 +1,3 @@
-function createRecentDateString(): string {
-    const recentDate: Date = new Date();
-    recentDate.setDate(recentDate.getDate() - 20);
-    return recentDate.toISOString().split("T")[0];
-}
-
 function getDateString(date: Date): string {
     return date.toISOString().split("T")[0];
 }
@@ -14,7 +8,7 @@ function isDateStringValid(dateString: string): boolean {
 }
 
 function getDateWithOffset(date: Date, days: number): Date {
-    const offsetDate = date;
+    const offsetDate = new Date(date);
     offsetDate.setDate(offsetDate.getDate() + days);
     return offsetDate;
 }
@@ -26,7 +20,6 @@ function getDifferenceInDaysFromTwoDates(date1: Date, date2: Date): number {
 }
 
 export {
-    createRecentDateString,
     getDateString,
     isDateStringValid,
     getDateWithOffset,
