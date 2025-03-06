@@ -1,0 +1,17 @@
+.mars-rover-image-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.mars-rover-image-list > img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+
+.mars-rover-image-list > img:hover {
+    transform: scale(1.05);
+}

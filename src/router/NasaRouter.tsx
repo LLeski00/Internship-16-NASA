@@ -11,7 +11,6 @@ import {
     ImageDetailsPage,
 } from "@/pages";
 import { routes } from "@/constants/routes";
-import MarsRoverImageDetailsPage from "@/pages/MarsRoverImageDetailsPage/MarsRoverImageDetailsPage";
 
 const NasaRouter = () => {
     return (
@@ -42,10 +41,6 @@ const NasaRouter = () => {
                     <Route
                         path={routes.IMAGE_DETAILS.path}
                         element={<ImageDetailsPage />}
-                    />
-                    <Route
-                        path={routes.MARS_ROVER_IMAGE_DETAILS.path}
-                        element={<MarsRoverImageDetailsPage />}
                     />
                     <Route
                         path={routes.NOT_FOUND.path}
