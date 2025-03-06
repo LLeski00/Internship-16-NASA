@@ -9,7 +9,7 @@ const RoverCameraFilter = () => {
     );
 
     function handleChange(e: SelectChangeEvent<string>) {
-        setRoverFilter({ ...roverFilter, camera: e.target.value });
+        setRoverFilter({ ...roverFilter, camera: e.target.value, page: 1 });
     }
 
     return (

@@ -11,7 +11,9 @@
         "moduleResolution": "node",
         "allowSyntheticDefaultImports": true,
         "esModuleInterop": true,
-        "module": "ESNext"
+        "module": "ESNext",
+        "types": ["prop-types"],
+        "typeRoots": ["node_modules/@types"]
     },
     "include": ["src/**/*"]
 }
