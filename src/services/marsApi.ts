@@ -5,6 +5,7 @@ import {
     RoverImageResponse,
     RoverResponse,
 } from "@/types/mars";
+import { createRoverApi } from "@/utils/roverUtils";
 
 const MARS_ROVER_API_URL: string =
     import.meta.env.VITE_NASA_API_URL + "/mars-photos/api/v1/rovers";
@@ -50,24 +51,25 @@ async function getMarsRovers(): Promise<Rover[]> {
 }
 
 async function getMarsRoverImages(
-    filters: RoverFilterType,
-    page: number
+    filters: RoverFilterType
 ): Promise<RoverImageData[]> {
-    const roverFilter = "/" + filters.rover.toLowerCase() + "/photos";
-    const cameraFilter =
-        filters.camera !== "" ? "&camera=" + filters.camera : "";
-    const api =
-        MARS_ROVER_API_URL +
-        roverFilter +
-        "?api_key=" +
-        import.meta.env.VITE_NASA_API_KEY +
-        "&sol=1000" +
-        "&page=" +
-        page.toString() +
-        cameraFilter;
+    const api = createRoverApi(MARS_ROVER_API_URL, filters);
 
     const rovers = await fetchMarsRoverImages(api);
     return rovers ? rovers.photos : [];
 }
 
-export { getMarsRovers, getMarsRoverImages };
+async function getMarsRoverImageById(
+    filters: RoverFilterType,
+    id: string
+): Promise<RoverImageData | null> {
+    const api = createRoverApi(MARS_ROVER_API_URL, filters);
+
+    const rovers = await fetchMarsRoverImages(api);
+    const searchedImage = rovers
+        ? rovers.photos.find((rover) => rover.id.toString() === id)
+        : undefined;
+    return searchedImage ?? null;
+}
+
+export { getMarsRovers, getMarsRoverImages, getMarsRoverImageById };

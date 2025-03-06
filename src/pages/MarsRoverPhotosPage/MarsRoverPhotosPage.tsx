@@ -1,5 +1,6 @@
 import { RoverCameraFilter, RoverFilter } from "@/components";
 import MarsRoverGallery from "@/components/MarsRoverGallery/MarsRoverGallery";
+import "./MarsRoverPhotosPage.css";
 
 const MarsRoverPhotosPage = () => {
     return (

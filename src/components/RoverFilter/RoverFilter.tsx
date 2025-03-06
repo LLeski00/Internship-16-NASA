@@ -14,7 +14,7 @@ const RoverFilter = () => {
     async function loadRovers() {
         const newRovers: Rover[] = await getMarsRovers();
         setRovers(newRovers);
-        setRoverFilter({ rover: newRovers[0].name, camera: "" });
+        setRoverFilter({ rover: newRovers[0].name, camera: "", page: 1 });
     }
 
     function handleChange(
@@ -22,7 +22,7 @@ const RoverFilter = () => {
         selectedRover: string | null
     ) {
         if (selectedRover !== null)
-            setRoverFilter({ rover: selectedRover, camera: "" });
+            setRoverFilter({ rover: selectedRover, camera: "", page: 1 });
     }
 
     return (

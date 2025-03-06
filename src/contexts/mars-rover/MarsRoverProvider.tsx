@@ -6,6 +6,7 @@ export const MarsRoverProvider: FC<PropsWithChildren> = ({ children }) => {
     const [roverFilter, setRoverFilter] = useState<RoverFilterType>({
         rover: "",
         camera: "",
+        page: 1,
     });
     const [rovers, setRovers] = useState<Rover[]>([]);
 

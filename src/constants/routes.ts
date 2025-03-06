@@ -48,6 +48,13 @@ const routes: Routes = {
         image: "",
         isMainRoute: false,
     },
+    MARS_ROVER_IMAGE_DETAILS: {
+        path: "mars-rover/images/:id",
+        name: "Mars Rover Image details",
+        description: "Details of a mars rover image",
+        image: "",
+        isMainRoute: false,
+    },
     DETAILS: {
         path: "/details",
         name: "Details",

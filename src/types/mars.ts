@@ -37,6 +37,7 @@ type RoverImageData = {
 type RoverFilterType = {
     rover: string;
     camera: string;
+    page: number;
 };
 
 export {
