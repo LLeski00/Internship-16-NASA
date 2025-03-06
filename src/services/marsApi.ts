@@ -35,7 +35,6 @@ async function fetchMarsRoverImages(
             throw new Error(`Response status: ${response.status}`);
 
         const fetchedImages = await response.json();
-        console.log(fetchedImages);
         return fetchedImages;
     } catch (error) {
         console.error((error as Error).message);

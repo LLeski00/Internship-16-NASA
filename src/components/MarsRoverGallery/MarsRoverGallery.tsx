@@ -20,7 +20,6 @@ const MarsRoverGallery = () => {
         const newImages: RoverImageData[] = await getMarsRoverImages(
             roverFilter
         );
-        console.log(newImages);
         setImages(newImages);
     }
 

@@ -11,6 +11,6 @@ export interface MarsRoverContextType {
 export const MarsRoverContext = createContext<MarsRoverContextType>({
     rovers: [],
     setRovers: () => {},
-    roverFilter: { rover: "", camera: "" },
+    roverFilter: { rover: "", camera: "", page: 1 },
     setRoverFilter: () => {},
 });
