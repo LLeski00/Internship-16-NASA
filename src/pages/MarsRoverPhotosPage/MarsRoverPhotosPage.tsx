@@ -1,6 +1,6 @@
-import MarsRoverGallery from "@/components/MarsRoverGallery/MarsRoverGallery";
+import MarsRoverGallery from "@/components/MarsRover/MarsRoverGallery/MarsRoverGallery";
 import "./MarsRoverPhotosPage.css";
-import MarsRoverImageDetails from "@/components/MarsRoverImageDetails/MarsRoverImageDetails";
+import MarsRoverImageDetails from "@/components/MarsRover/MarsRoverImageDetails/MarsRoverImageDetails";
 import { RoverImageData } from "@/types/mars";
 import { useState } from "react";
 
