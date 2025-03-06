@@ -1,9 +1,7 @@
 import { FC } from "react";
-import { PieChart } from "@/components";
-import { Neo, NeoData } from "@/types/neo";
-import { ChartData, HazardChartType } from "@/types/chart";
-import NeoBarChart from "../NeoBarChart/NeoBarChart";
-import NeoPieChart from "../NeoPieChart/NeoPieChart";
+import { NeoBarChart, NeoHistogram, NeoPieChart } from "@/components";
+import { NeoData } from "@/types/neo";
+import { ChartData, HazardChartType, HistogramType } from "@/types/chart";
 
 interface NeoChartsProps {
     neoData: NeoData;
@@ -12,6 +10,7 @@ interface NeoChartsProps {
 const NeoCharts: FC<NeoChartsProps> = ({ neoData }) => {
     const barChartData: ChartData[] = getBarChartData();
     const pieChartData: HazardChartType[] = getPieChartData();
+    const histogramData: HistogramType[] = getHistogramData();
 
     function getBarChartData(): ChartData[] {
         return Object.entries(neoData)
@@ -44,10 +43,33 @@ const NeoCharts: FC<NeoChartsProps> = ({ neoData }) => {
         ];
     }
 
+    function getHistogramData(): HistogramType[] {
+        const sizeCounter = { small: 0, medium: 0, large: 0 };
+
+        Object.values(neoData)
+            .flat()
+            .forEach((neo) => {
+                if (neo.estimated_diameter.meters.estimated_diameter_max <= 50)
+                    sizeCounter.small++;
+                else if (
+                    neo.estimated_diameter.meters.estimated_diameter_max <= 200
+                )
+                    sizeCounter.medium++;
+                else sizeCounter.large++;
+            });
+
+        return [
+            { name: "Small (0-50)", count: sizeCounter.small },
+            { name: "Medium (51-200)", count: sizeCounter.medium },
+            { name: "Large (201+)", count: sizeCounter.large },
+        ];
+    }
+
     return (
         <div className="neo-charts">
             <NeoBarChart chartData={barChartData} />
             <NeoPieChart chartData={pieChartData} />
+            <NeoHistogram chartData={histogramData} />
         </div>
     );
 };

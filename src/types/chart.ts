@@ -8,4 +8,9 @@ type HazardChartType = {
     value: number;
 };
 
-export { ChartData, HazardChartType };
+type HistogramType = {
+    name: string;
+    count: number;
+};
+
+export { ChartData, HazardChartType, HistogramType };
