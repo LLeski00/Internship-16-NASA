@@ -52,12 +52,14 @@ type Neo = {
     is_sentry_object: boolean;
 };
 
+type NeoData = {
+    [date: string]: Neo[];
+};
+
 type NeoResponse = {
     links: Links;
     element_count: number;
-    near_earth_objects: {
-        [date: string]: Neo[];
-    };
+    near_earth_objects: NeoData;
 };
 
-export { NeoResponse, Neo };
+export { NeoResponse, Neo, NeoData };

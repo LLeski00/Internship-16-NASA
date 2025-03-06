@@ -1,5 +1,4 @@
-import { Neo, NeoResponse } from "@/types/neo";
-import { getNeosFromResponse } from "@/utils/neoUtils";
+import { NeoData, NeoResponse } from "@/types/neo";
 
 const NEO_API_URL =
     import.meta.env.VITE_NASA_API_URL +
@@ -21,11 +20,11 @@ async function fetchNeos(api: string): Promise<NeoResponse | null> {
     }
 }
 
-async function getNeos(): Promise<Neo[]> {
+async function getNeos(): Promise<NeoData | null> {
     const api = NEO_API_URL;
 
     const response: NeoResponse | null = await fetchNeos(api);
-    return response ? getNeosFromResponse(response) : [];
+    return response ? response.near_earth_objects : null;
 }
 
 export { getNeos };
