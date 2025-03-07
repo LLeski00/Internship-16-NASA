@@ -20,7 +20,9 @@ const NotFoundPage = () => {
                 src={astronautImage}
                 alt="astronaut"
             />
-            <Button onClick={() => navigate("/")}>Go home</Button>
+            <Button onClick={() => navigate("/")} variant="contained">
+                Go home
+            </Button>
         </div>
     );
 };

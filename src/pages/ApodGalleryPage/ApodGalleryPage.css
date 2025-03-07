@@ -1,5 +1,8 @@
 .apod-gallery-page {
+    margin-top: 70px;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 .apod-gallery-page > h1 {
@@ -8,6 +11,10 @@
 }
 
 .apod-gallery-page > p {
-    margin-bottom: 20px;
+    margin-bottom: 60px;
     text-align: center;
+}
+
+.apod-gallery-page .date-filter {
+    margin-bottom: 50px;
 }

@@ -3,11 +3,9 @@ import { NeoBarChart, NeoHistogram } from "@/components";
 import { NeoData } from "@/types/neo";
 import { ChartData, HazardChartType, HistogramType } from "@/types/chart";
 import NeoPieChart from "../NeoPieChart/NeoPieChart";
-import { withLoading } from "@/hoc/WithLoading";
 
 interface NeoChartsProps {
     neoData: NeoData | null;
-    isLoading: boolean;
 }
 
 const NeoCharts: FC<NeoChartsProps> = ({ neoData }) => {
@@ -88,4 +86,4 @@ const NeoCharts: FC<NeoChartsProps> = ({ neoData }) => {
     );
 };
 
-export const NeoChartsWithLoading = withLoading(NeoCharts);
+export default NeoCharts;

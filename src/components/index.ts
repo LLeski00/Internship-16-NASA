@@ -11,6 +11,6 @@ export { default as NeoHistogram } from "@/components/NeoHistogram/NeoHistogram"
 export { default as InteractiveMap } from "@/components/InteractiveMap/InteractiveMap";
 export { default as FavouriteLocations } from "@/components/FavouriteLocations/FavouriteLocations";
 export * from "@/components/NeoList/NeoList";
-export * from "@/components/NeoCharts/NeoCharts";
+export { default as NeoCharts } from "@/components/NeoCharts/NeoCharts";
 export * from "@/components/FavouriteLocations/FavouriteLocations";
 export * from "@/components/MarsRover";

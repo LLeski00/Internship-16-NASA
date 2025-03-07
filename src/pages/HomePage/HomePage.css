@@ -1,4 +1,12 @@
 .home-page {
     position: relative;
     padding-inline: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home-page > p {
+    font-size: 25px;
+    padding-inline: 300px;
 }

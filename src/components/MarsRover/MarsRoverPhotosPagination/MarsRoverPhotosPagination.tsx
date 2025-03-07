@@ -2,6 +2,7 @@ import { useMarsRover } from "@/hooks/UseMarsRover";
 import { RoverImageData } from "@/types/mars";
 import { Button } from "@mui/material";
 import { FC } from "react";
+import "./MarsRoverPhotosPagination.css";
 
 interface MarsRoverPhotosPaginationProps {
     images: RoverImageData[];
@@ -26,6 +27,7 @@ const MarsRoverPhotosPagination: FC<MarsRoverPhotosPaginationProps> = ({
             <Button
                 onClick={() => handlePageChange("-")}
                 disabled={roverFilter.page <= 1}
+                variant="contained"
             >
                 {"<-"}
             </Button>
@@ -33,6 +35,7 @@ const MarsRoverPhotosPagination: FC<MarsRoverPhotosPaginationProps> = ({
             <Button
                 onClick={() => handlePageChange("+")}
                 disabled={images.length === 0}
+                variant="contained"
             >
                 {"->"}
             </Button>

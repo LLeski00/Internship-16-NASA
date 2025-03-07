@@ -10,9 +10,9 @@ interface RoverCameraFilterProps {
 
 const RoverCameraFilter: FC<RoverCameraFilterProps> = () => {
     const { rovers, roverFilter, setRoverFilter } = useMarsRover();
-    const selectedRover: Rover | undefined = rovers.find(
-        (rover: Rover) => rover.name === roverFilter.rover
-    );
+    const selectedRover: Rover | undefined = rovers
+        ? rovers.find((rover: Rover) => rover.name === roverFilter.rover)
+        : undefined;
 
     function handleChange(e: SelectChangeEvent<string>) {
         setRoverFilter({ ...roverFilter, camera: e.target.value, page: 1 });

@@ -2,6 +2,7 @@ import { isFavouriteUnique } from "@/utils/earthImageryUtils";
 import { Button } from "@mui/material";
 import { LatLng } from "leaflet";
 import { FC, useEffect, useState } from "react";
+import "./FavouriteLocations.css";
 
 interface FavouriteLocationsProps {
     position: LatLng;
@@ -55,7 +56,7 @@ const FavouriteLocations: FC<FavouriteLocationsProps> = ({
 
     return (
         <div className="favourite-locations">
-            <Button onClick={addToFavourites}>
+            <Button onClick={addToFavourites} variant="contained">
                 Add location to favourites
             </Button>
             <h2>Favourite locations:</h2>
@@ -68,7 +69,10 @@ const FavouriteLocations: FC<FavouriteLocationsProps> = ({
                         <p
                             onClick={() => setPosition(fav)}
                         >{`${fav.lat}, ${fav.lng}`}</p>
-                        <Button onClick={() => deleteFavourite(fav)}>
+                        <Button
+                            onClick={() => deleteFavourite(fav)}
+                            variant="contained"
+                        >
                             Delete
                         </Button>
                     </div>

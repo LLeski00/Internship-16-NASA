@@ -1,12 +1,8 @@
 import { NavigationCardList, SolarSystemAnimation } from "@/components";
-import { useTheme } from "@/hooks";
 import "./HomePage.css";
 import milkyWayImage from "@/assets/images/milky-way.jpeg";
-import { Button } from "@mui/material";
 
 const HomePage = () => {
-    const { toggleTheme } = useTheme();
-
     return (
         <div className="home-page">
             <img
@@ -30,7 +26,6 @@ const HomePage = () => {
                 Explore, learn, and be inspired by the beauty and mystery of our
                 universe!
             </p>
-            <Button onClick={toggleTheme}>Toggle theme</Button>
             <NavigationCardList />
         </div>
     );

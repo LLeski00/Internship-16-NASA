@@ -13,7 +13,9 @@ export const ErrorFallback: FC<ErrorFallbackProps> = ({
     return (
         <div>
             <p className="error-message">Error: {error.message}</p>
-            <Button onClick={resetErrorBoundary}>Try again</Button>
+            <Button onClick={resetErrorBoundary} variant="contained">
+                Try again
+            </Button>
         </div>
     );
 };

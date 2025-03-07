@@ -28,11 +28,12 @@ const RoverFilter: FC<RoverFilterProps> = () => {
                 onChange={handleChange}
                 aria-label="Platform"
             >
-                {rovers.map((rover: Rover) => (
-                    <ToggleButton key={rover.id} value={rover.name}>
-                        {rover.name}
-                    </ToggleButton>
-                ))}
+                {rovers &&
+                    rovers.map((rover: Rover) => (
+                        <ToggleButton key={rover.id} value={rover.name}>
+                            {rover.name}
+                        </ToggleButton>
+                    ))}
             </ToggleButtonGroup>
         </>
     );

@@ -42,34 +42,21 @@ async function fetchMarsRoverImages(
     }
 }
 
-async function getActiveMarsRovers(): Promise<Rover[]> {
+async function getActiveMarsRovers(): Promise<Rover[] | null> {
     const api =
         MARS_ROVER_API_URL + "?api_key=" + import.meta.env.VITE_NASA_API_KEY;
     const rovers: RoverResponse | null = await fetchMarsRovers(api);
-    if (!rovers) return [];
-    return rovers.rovers.filter((rover) => rover.status === "active");
+    return rovers
+        ? rovers.rovers.filter((rover) => rover.status === "active")
+        : null;
 }
 
 async function getMarsRoverImages(
     filters: RoverFilterType
-): Promise<RoverImageData[]> {
+): Promise<RoverImageData[] | null> {
     const api = createRoverApi(MARS_ROVER_API_URL, filters);
-
-    const rovers = await fetchMarsRoverImages(api);
-    return rovers ? rovers.photos : [];
+    const rovers: RoverImageResponse | null = await fetchMarsRoverImages(api);
+    return rovers ? rovers.photos : null;
 }
 
-async function getMarsRoverImageById(
-    filters: RoverFilterType,
-    id: string
-): Promise<RoverImageData | null> {
-    const api = createRoverApi(MARS_ROVER_API_URL, filters);
-
-    const rovers = await fetchMarsRoverImages(api);
-    const searchedImage = rovers
-        ? rovers.photos.find((rover) => rover.id.toString() === id)
-        : undefined;
-    return searchedImage ?? null;
-}
-
-export { getActiveMarsRovers, getMarsRoverImages, getMarsRoverImageById };
+export { getActiveMarsRovers, getMarsRoverImages };

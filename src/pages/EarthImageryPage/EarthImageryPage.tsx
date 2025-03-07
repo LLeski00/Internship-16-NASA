@@ -40,6 +40,18 @@ const EarthImageryPage = () => {
 
     return (
         <div className="earth-imagery-page">
+            <h1>Earth Imagery</h1>
+            <p>
+                Explore our planet from space with stunning satellite imagery.{" "}
+                <br /> <br />
+                Interactive Map: Click on any location to select it. <br />
+                Satellite Photo: Once a location is chosen, view the latest
+                satellite photo of that spot. <br />
+                Navigate Easily: Zoom, pan, and move across the map to explore
+                any corner of the world.
+                <br /> Save Favorites: Mark your favorite locations for quick
+                access later.
+            </p>
             <InteractiveMap position={position} setPosition={setPosition} />
             <ErrorBoundary FallbackComponent={ErrorFallback}>
                 <SatellitePhotoWithLoading

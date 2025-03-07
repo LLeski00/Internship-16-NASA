@@ -13,7 +13,9 @@ const MarsRoverImageDetails: FC<MarsRoverImageDetailsProps> = ({
 }) => {
     return (
         <>
-            <Button onClick={() => returnToGallery()}>Back</Button>
+            <Button onClick={() => returnToGallery()} variant="contained">
+                Back
+            </Button>
             {image ? (
                 <div className="image-details">
                     <img

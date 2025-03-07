@@ -5,6 +5,8 @@ import {
 import "./MarsRoverPhotosPage.css";
 import { RoverImageData } from "@/types/mars";
 import { useState } from "react";
+import { ErrorBoundary } from "react-error-boundary";
+import { ErrorFallback } from "@/error/ErrorFallback";
 
 const MarsRoverPhotosPage = () => {
     const [selectedImage, setSelectedImage] = useState<RoverImageData>();
@@ -17,7 +19,9 @@ const MarsRoverPhotosPage = () => {
                     returnToGallery={() => setSelectedImage(undefined)}
                 />
             ) : (
-                <MarsRoverGallery setSelectedImage={setSelectedImage} />
+                <ErrorBoundary FallbackComponent={ErrorFallback}>
+                    <MarsRoverGallery setSelectedImage={setSelectedImage} />
+                </ErrorBoundary>
             )}
         </div>
     );

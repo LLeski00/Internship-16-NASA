@@ -1,4 +1,4 @@
-import { NeoChartsWithLoading, NeoListWithLoading } from "@/components";
+import { NeoCharts, NeoListWithLoading } from "@/components";
 import { getNeos } from "@/services/neoApi";
 import { Neo, NeoData } from "@/types/neo";
 import { useEffect, useState } from "react";
@@ -23,7 +23,7 @@ const NeoTrackerPage = () => {
 
     return (
         <div className="neo-tracker-page">
-            <NeoChartsWithLoading neoData={neoData} isLoading={isLoading} />
+            <NeoCharts neoData={neoData} />
             <NeoListWithLoading neos={neos} isLoading={isLoading} />
         </div>
     );

@@ -5,17 +5,22 @@
     align-items: center;
     justify-content: center;
     height: 100%;
+    margin-inline: 50px;
 }
 
 .not-found-page > p,
 .not-found-page > button {
-    animation: fade-in 2s;
+    font-size: 50px;
+}
+
+.not-found-page > p,
+.not-found-page > button {
+    animation: fade-in 3s;
 }
 
 .astronaut-image {
     position: relative;
-    animation: floating linear 5s;
-    rotate: -20deg;
+    animation: floating linear 5s, rotation linear 35s infinite;
 }
 
 @keyframes floating {
@@ -26,6 +31,15 @@
     100% {
         top: 0;
         opacity: 1;
+    }
+}
+
+@keyframes rotation {
+    0% {
+        rotate: -50deg;
+    }
+    100% {
+        rotate: 310deg;
     }
 }
 

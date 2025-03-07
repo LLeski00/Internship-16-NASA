@@ -8,6 +8,7 @@ import {
     MarsRoverPhotosFilter,
     MarsRoverPhotosPagination,
 } from "@/components";
+import { useErrorHandler } from "@/hooks";
 
 interface MarsRoverGalleryProps {
     setSelectedImage: Function;
@@ -17,22 +18,31 @@ const MarsRoverGallery: FC<MarsRoverGalleryProps> = ({ setSelectedImage }) => {
     const [images, setImages] = useState<RoverImageData[]>([]);
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const { roverFilter } = useMarsRover();
+    const { error, handleError, resetError } = useErrorHandler();
 
     useEffect(() => {
         if (roverFilter.rover !== "") loadImages();
     }, [roverFilter]);
 
+    useEffect(() => {
+        if (error) throw new Error(error.message);
+    }, [error]);
+
     async function loadImages() {
         setIsLoading(true);
-        const newImages: RoverImageData[] = await getMarsRoverImages(
+        const newImages: RoverImageData[] | null = await getMarsRoverImages(
             roverFilter
         );
+        if (!newImages) {
+            handleError(new Error("Error while fetching mars rover images"));
+            return;
+        }
         setImages(newImages);
         setIsLoading(false);
     }
 
     return (
-        <>
+        <div className="mars-rover-gallery">
             <h1>Mars Rover Photo Gallery</h1>
             <p>
                 A Mars Rover Photos page lets you explore stunning images
@@ -51,7 +61,7 @@ const MarsRoverGallery: FC<MarsRoverGalleryProps> = ({ setSelectedImage }) => {
                 setIsLoading={setIsLoading}
             />
             <MarsRoverPhotosPagination images={images} />
-        </>
+        </div>
     );
 };
 

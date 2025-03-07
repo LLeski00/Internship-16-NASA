@@ -1,0 +1,7 @@
+.satellite-photo {
+    text-align: center;
+}
+
+.satellite-photo > img {
+    width: 300px;
+}
