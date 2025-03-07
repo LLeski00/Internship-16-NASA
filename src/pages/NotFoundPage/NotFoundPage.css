@@ -1,0 +1,39 @@
+.not-found-page {
+    padding-top: 20vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.not-found-page > p,
+.not-found-page > button {
+    animation: fade-in 2s;
+}
+
+.astronaut-image {
+    position: relative;
+    animation: floating linear 5s;
+    rotate: -20deg;
+}
+
+@keyframes floating {
+    0% {
+        top: 200px;
+        opacity: 0;
+    }
+    100% {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

@@ -12,7 +12,9 @@ import { ErrorFallback } from "@/error/ErrorFallback";
 
 const EarthImageryPage = () => {
     const [imageUrl, setImageUrl] = useState<string | undefined>();
-    const [position, setPosition] = useState<LatLng>(new LatLng(51.5, -0.09));
+    const [position, setPosition] = useState<LatLng>(
+        new LatLng(47.517200697839414, 14.062500000000002)
+    );
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const { error, handleError, resetError } = useErrorHandler();
 

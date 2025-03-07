@@ -13,15 +13,4 @@ function getDateWithOffset(date: Date, days: number): Date {
     return offsetDate;
 }
 
-function getDifferenceInDaysFromTwoDates(date1: Date, date2: Date): number {
-    const diff = Math.abs(date1.getTime() - date2.getTime());
-    const days = Math.ceil(diff / (1000 * 3600 * 24));
-    return days;
-}
-
-export {
-    getDateString,
-    isDateStringValid,
-    getDateWithOffset,
-    getDifferenceInDaysFromTwoDates,
-};
+export { getDateString, isDateStringValid, getDateWithOffset };

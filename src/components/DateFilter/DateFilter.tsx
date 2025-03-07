@@ -26,7 +26,8 @@ const DateFilter: FC<DateFilterProps> = ({ setDateFilter }) => {
     function handleFormSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
         const error = checkError();
-        setErrorMessage(null);
+        setErrorMessage(error);
+        if (error) return;
         const newDateFilter = {
             startDate: startDate.current.toDate(),
             endDate: endDate.current.toDate(),

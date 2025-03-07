@@ -9,9 +9,4 @@ type SatellitePhotoResponse = {
     url: string;
 };
 
-type Coordinates = {
-    latitude: number;
-    longitude: number;
-};
-
-export { Coordinates, SatellitePhotoResponse };
+export { SatellitePhotoResponse };

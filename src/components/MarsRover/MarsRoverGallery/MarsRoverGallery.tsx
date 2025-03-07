@@ -6,6 +6,7 @@ import { RoverImageData } from "@/types/mars";
 import {
     MarsRoverImageListWithLoading,
     MarsRoverPhotosFilter,
+    MarsRoverPhotosPagination,
 } from "@/components";
 
 interface MarsRoverGalleryProps {
@@ -49,6 +50,7 @@ const MarsRoverGallery: FC<MarsRoverGalleryProps> = ({ setSelectedImage }) => {
                 isLoading={isLoading}
                 setIsLoading={setIsLoading}
             />
+            <MarsRoverPhotosPagination images={images} />
         </>
     );
 };
