@@ -3,6 +3,7 @@ import { useMarsRover } from "@/hooks/UseMarsRover";
 import { Rover } from "@/types/mars";
 import { ToggleButton, ToggleButtonGroup } from "@mui/material";
 import { FC } from "react";
+import "./RoverFilter.css";
 
 interface RoverFilterProps {
     isLoading: boolean;
@@ -20,7 +21,7 @@ const RoverFilter: FC<RoverFilterProps> = () => {
     }
 
     return (
-        <>
+        <div className="rover-filter">
             <ToggleButtonGroup
                 color="primary"
                 value={roverFilter.rover}
@@ -35,7 +36,7 @@ const RoverFilter: FC<RoverFilterProps> = () => {
                         </ToggleButton>
                     ))}
             </ToggleButtonGroup>
-        </>
+        </div>
     );
 };
 

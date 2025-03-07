@@ -30,7 +30,6 @@ const FavouriteLocations: FC<FavouriteLocationsProps> = ({
         const localStorageData: LatLng[] = JSON.parse(
             localStorage.getItem("favourite-locations") ?? "[]"
         );
-        console.log(localStorageData);
         if (!isFavouriteUnique(localStorageData, position)) return;
         const newFavourites: LatLng[] = [...localStorageData, position];
         localStorage.setItem(
@@ -40,7 +39,8 @@ const FavouriteLocations: FC<FavouriteLocationsProps> = ({
         setFavourites(newFavourites);
     }
 
-    function deleteFavourite(favourite: LatLng) {
+    function deleteFavourite(e: React.MouseEvent, favourite: LatLng) {
+        e.stopPropagation();
         const localStorageData: LatLng[] = JSON.parse(
             localStorage.getItem("favourite-locations") ?? "[]"
         );
@@ -61,22 +61,23 @@ const FavouriteLocations: FC<FavouriteLocationsProps> = ({
             </Button>
             <h2>Favourite locations:</h2>
             {favourites.length > 0 ? (
-                favourites.map((fav) => (
-                    <div
-                        key={`${fav.lat}, ${fav.lng}`}
-                        className="favourite-location"
-                    >
-                        <p
+                <div className="favourites-list">
+                    {favourites.map((fav) => (
+                        <div
+                            key={`${fav.lat}, ${fav.lng}`}
+                            className="favourite-location"
                             onClick={() => setPosition(fav)}
-                        >{`${fav.lat}, ${fav.lng}`}</p>
-                        <Button
-                            onClick={() => deleteFavourite(fav)}
-                            variant="contained"
                         >
-                            Delete
-                        </Button>
-                    </div>
-                ))
+                            <p>{`${fav.lat}, ${fav.lng}`}</p>
+                            <Button
+                                onClick={(e) => deleteFavourite(e, fav)}
+                                variant="contained"
+                            >
+                                Delete
+                            </Button>
+                        </div>
+                    ))}
+                </div>
             ) : (
                 <p>No favourites.</p>
             )}

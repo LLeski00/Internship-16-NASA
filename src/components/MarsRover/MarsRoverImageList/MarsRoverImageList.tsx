@@ -19,7 +19,6 @@ const MarsRoverImageList: FC<MarsRoverImageListProps> = ({
 }) => {
     function handleImageClick(image: RoverImageData) {
         setIsLoading(true);
-        console.log(images);
         setImages([]);
         setSelectedImage(image);
         setIsLoading(false);

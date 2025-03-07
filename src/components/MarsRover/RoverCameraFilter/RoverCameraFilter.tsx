@@ -1,8 +1,8 @@
-import { withLoading } from "@/hoc/WithLoading";
 import { useMarsRover } from "@/hooks/UseMarsRover";
 import { Rover } from "@/types/mars";
-import { MenuItem, Select, SelectChangeEvent } from "@mui/material";
+import { InputLabel, MenuItem, Select, SelectChangeEvent } from "@mui/material";
 import { FC } from "react";
+import "./RoverCameraFilter.css";
 
 interface RoverCameraFilterProps {
     isLoading: boolean;
@@ -19,23 +19,28 @@ const RoverCameraFilter: FC<RoverCameraFilterProps> = () => {
     }
 
     return (
-        <>
+        <div className="rover-camera-filter">
             {selectedRover && (
-                <Select
-                    defaultValue=""
-                    value={roverFilter.camera}
-                    label="Camera"
-                    onChange={handleChange}
-                >
-                    <MenuItem value="">Select a camera</MenuItem>
-                    {selectedRover.cameras.map((camera) => (
-                        <MenuItem key={camera.id} value={camera.name}>
-                            {camera.name}
-                        </MenuItem>
-                    ))}
-                </Select>
+                <>
+                    <InputLabel id="rover-camera-label">Camera</InputLabel>
+                    <Select
+                        labelId="rover-camera-label"
+                        id="rover-camera"
+                        defaultValue=""
+                        value={roverFilter.camera}
+                        label="Camera"
+                        onChange={handleChange}
+                    >
+                        <MenuItem value="">Select a camera</MenuItem>
+                        {selectedRover.cameras.map((camera) => (
+                            <MenuItem key={camera.id} value={camera.name}>
+                                {camera.name}
+                            </MenuItem>
+                        ))}
+                    </Select>
+                </>
             )}
-        </>
+        </div>
     );
 };
 

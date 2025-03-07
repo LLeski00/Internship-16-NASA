@@ -1,0 +1,16 @@
+.rover-filter {
+    display: flex;
+    justify-content: center;
+}
+
+body.dark-theme .MuiButtonBase-root {
+    color: var(--light-theme-color);
+    border-color: var(--light-theme-color);
+}
+
+body.dark-theme .Mui-selected {
+    background-color: var(--nasa-blue-color);
+}
+
+body.dark-theme .MuiButtonBase-root {
+}

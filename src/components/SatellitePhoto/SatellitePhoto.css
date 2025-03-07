@@ -1,5 +1,10 @@
 .satellite-photo {
     text-align: center;
+    margin: 30px 0px;
+}
+
+.satellite-photo > p {
+    margin-bottom: 30px;
 }
 
 .satellite-photo > img {

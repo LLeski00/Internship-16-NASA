@@ -3,3 +3,28 @@
     flex-direction: column;
     gap: 20px;
 }
+
+.favourite-locations > button {
+    width: 300px;
+    align-self: center;
+}
+
+.favourites-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 50px;
+}
+
+.favourite-location {
+    cursor: pointer;
+    background-color: gray;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+}
+
+.favourite-location:hover {
+    transform: scale(1.1);
+}

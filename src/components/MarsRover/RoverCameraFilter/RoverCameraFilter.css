@@ -1,0 +1,27 @@
+.rover-camera-filter > div {
+    width: 500px;
+}
+
+body.dark-theme .MuiSelect-root svg {
+    color: var(--light-theme-color);
+}
+
+body.dark-theme .MuiSelect-root fieldset {
+    border-color: var(--light-theme-color);
+}
+
+body.dark-theme .MuiPaper-root li {
+    color: var(--dark-theme-color);
+}
+
+body.dark-theme .rover-camera-filter label {
+    color: var(--light-theme-color);
+}
+
+body.dark-theme .MuiDateCalendar-root .MuiButtonBase-root {
+    color: var(--dark-theme-color);
+}
+
+body.dark-theme .MuiDateCalendar-root .Mui-disabled {
+    color: rgb(194, 194, 194);
+}

@@ -4,3 +4,21 @@
     align-items: center;
     gap: 30px;
 }
+
+body.dark-theme .MuiInputBase-root {
+    border-color: white !important;
+    color: var(--light-theme-color) !important;
+}
+
+body.dark-theme .date-filter label {
+    color: var(--light-theme-color);
+}
+
+body.dark-theme .date-filter fieldset {
+    border-color: var(--light-theme-color);
+    color: var(--light-theme-color);
+}
+
+body.dark-theme .date-filter svg {
+    color: var(--light-theme-color);
+}
