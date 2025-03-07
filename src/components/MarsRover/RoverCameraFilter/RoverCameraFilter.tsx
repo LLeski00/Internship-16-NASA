@@ -1,8 +1,14 @@
+import { withLoading } from "@/hoc/WithLoading";
 import { useMarsRover } from "@/hooks/UseMarsRover";
 import { Rover } from "@/types/mars";
 import { MenuItem, Select, SelectChangeEvent } from "@mui/material";
+import { FC } from "react";
 
-const RoverCameraFilter = () => {
+interface RoverCameraFilterProps {
+    isLoading: boolean;
+}
+
+const RoverCameraFilter: FC<RoverCameraFilterProps> = () => {
     const { rovers, roverFilter, setRoverFilter } = useMarsRover();
     const selectedRover: Rover | undefined = rovers.find(
         (rover: Rover) => rover.name === roverFilter.rover
@@ -14,7 +20,7 @@ const RoverCameraFilter = () => {
 
     return (
         <>
-            {roverFilter && selectedRover && (
+            {selectedRover && (
                 <Select
                     defaultValue=""
                     value={roverFilter.camera}
@@ -33,4 +39,4 @@ const RoverCameraFilter = () => {
     );
 };
 
-export default RoverCameraFilter;
+export const RoverCameraFilterWithLoading = withLoading(RoverCameraFilter);

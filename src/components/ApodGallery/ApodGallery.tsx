@@ -1,11 +1,11 @@
-import { ImageCard } from "@/components";
-import { ImageData } from "@/types/image";
 import { FC, useEffect, useRef, useState } from "react";
-import "./ApodGallery.css";
-import { useInView } from "react-intersection-observer";
+import { ImageData } from "@/types/image";
 import { DateFilterType } from "@/types/filter";
 import { getApodImages } from "@/services/apodApi";
 import { getDateWithOffset } from "@/utils/dateUtils";
+import "./ApodGallery.css";
+import { useInView } from "react-intersection-observer";
+import { ImageListWithLoading } from "../ImageList/ImageList";
 
 interface ApodGalleryProps {
     dateFilter: DateFilterType | undefined;
@@ -13,6 +13,7 @@ interface ApodGalleryProps {
 
 const ApodGallery: FC<ApodGalleryProps> = ({ dateFilter }) => {
     const [images, setImages] = useState<ImageData[]>([]);
+    const [isLoading, setIsLoading] = useState<boolean>(false);
     const { ref, inView } = useInView();
     const dateRef = useRef<Date>(new Date());
 
@@ -26,6 +27,7 @@ const ApodGallery: FC<ApodGalleryProps> = ({ dateFilter }) => {
     }, [inView]);
 
     async function loadImages(firstLoad: boolean = false) {
+        setIsLoading(true);
         const startDate: Date = getStartDate(dateRef.current);
         const newImages: ImageData[] = await getApodImages(
             startDate,
@@ -33,6 +35,7 @@ const ApodGallery: FC<ApodGalleryProps> = ({ dateFilter }) => {
         );
         firstLoad ? setImages(newImages) : setImages([...images, ...newImages]);
         dateRef.current = getDateWithOffset(dateRef.current, -21);
+        setIsLoading(false);
     }
 
     function getStartDate(endDate: Date) {
@@ -51,16 +54,8 @@ const ApodGallery: FC<ApodGalleryProps> = ({ dateFilter }) => {
 
     return (
         <>
-            {images.length !== 0 && (
-                <>
-                    <div className="apod-gallery">
-                        {images.map((image: ImageData) => (
-                            <ImageCard key={image.date} data={image} />
-                        ))}
-                    </div>
-                    <div ref={ref} className="loading-intersection"></div>
-                </>
-            )}
+            <ImageListWithLoading images={images} isLoading={isLoading} />
+            <div ref={ref} className="loading-intersection"></div>
         </>
     );
 };

@@ -1,6 +1,6 @@
 import { NavigationCardList, SolarSystemAnimation } from "@/components";
 import { useTheme } from "@/hooks";
-import "@/pages/HomePage/HomePage.css";
+import "./HomePage.css";
 import milkyWayImage from "@/assets/images/milky-way.jpeg";
 
 const HomePage = () => {

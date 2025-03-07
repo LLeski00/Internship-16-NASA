@@ -3,10 +3,9 @@ import "./MarsRoverGallery.css";
 import { getMarsRoverImages } from "@/services/marsApi";
 import { useMarsRover } from "@/hooks/UseMarsRover";
 import { RoverImageData } from "@/types/mars";
-import RoverFilter from "../RoverFilter/RoverFilter";
-import RoverCameraFilter from "../RoverCameraFilter/RoverCameraFilter";
-import MarsRoverImageList from "../MarsRoverImageList/MarsRoverImageList";
+import { MarsRoverImageListWithLoading } from "../MarsRoverImageList/MarsRoverImageList";
 import MarsRoverPhotosPagination from "../MarsRoverPhotosPagination/MarsRoverPhotosPagination";
+import MarsRoverPhotosFilter from "../MarsRoverPhotosFilter/MarsRoverPhotosFilter";
 
 interface MarsRoverGalleryProps {
     setSelectedImage: Function;
@@ -14,6 +13,7 @@ interface MarsRoverGalleryProps {
 
 const MarsRoverGallery: FC<MarsRoverGalleryProps> = ({ setSelectedImage }) => {
     const [images, setImages] = useState<RoverImageData[]>([]);
+    const [isLoading, setIsLoading] = useState<boolean>(false);
     const { roverFilter } = useMarsRover();
 
     useEffect(() => {
@@ -21,10 +21,12 @@ const MarsRoverGallery: FC<MarsRoverGalleryProps> = ({ setSelectedImage }) => {
     }, [roverFilter]);
 
     async function loadImages() {
+        setIsLoading(true);
         const newImages: RoverImageData[] = await getMarsRoverImages(
             roverFilter
         );
         setImages(newImages);
+        setIsLoading(false);
     }
 
     return (
@@ -38,12 +40,13 @@ const MarsRoverGallery: FC<MarsRoverGalleryProps> = ({ setSelectedImage }) => {
                 into the incredible landscapes and discoveries from the Red
                 Planet.
             </p>
-            <RoverFilter />
-            <RoverCameraFilter />
-            <MarsRoverImageList
+            <MarsRoverPhotosFilter />
+            <MarsRoverImageListWithLoading
                 images={images}
                 setImages={setImages}
                 setSelectedImage={setSelectedImage}
+                isLoading={isLoading}
+                setIsLoading={setIsLoading}
             />
             <MarsRoverPhotosPagination />
         </>

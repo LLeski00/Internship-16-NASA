@@ -18,10 +18,11 @@ const NavigationCard: FC<NavigationCardProps> = ({ data }) => {
             onClick={() => navigate(`${detailsUrl}${objectPath}`)}
             className="navigation-card"
         >
-            <img
-                src={data.image !== "" ? data.image : undefined}
-                alt={data.name}
-            />
+            {data.image ? (
+                <img src={data.image} alt={data.name} />
+            ) : (
+                <p>Image not found.</p>
+            )}
             <h2>{data.name}</h2>
             <p>{data.description}</p>
         </div>

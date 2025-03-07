@@ -1,8 +1,5 @@
 import { useContext } from "react";
-import {
-    MarsRoverContext,
-    MarsRoverContextType,
-} from "../contexts/mars-rover/MarsRoverContext";
+import { MarsRoverContext, MarsRoverContextType } from "@/contexts";
 
 export const useMarsRover = (): MarsRoverContextType => {
     const context = useContext(MarsRoverContext);

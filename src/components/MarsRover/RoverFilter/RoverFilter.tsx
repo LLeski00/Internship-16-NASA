@@ -1,21 +1,15 @@
+import { withLoading } from "@/hoc/WithLoading";
 import { useMarsRover } from "@/hooks/UseMarsRover";
-import { getMarsRovers } from "@/services/marsApi";
 import { Rover } from "@/types/mars";
 import { ToggleButton, ToggleButtonGroup } from "@mui/material";
-import { useEffect } from "react";
+import { FC } from "react";
 
-const RoverFilter = () => {
-    const { rovers, setRovers, roverFilter, setRoverFilter } = useMarsRover();
+interface RoverFilterProps {
+    isLoading: boolean;
+}
 
-    useEffect(() => {
-        loadRovers();
-    }, []);
-
-    async function loadRovers() {
-        const newRovers: Rover[] = await getMarsRovers();
-        setRovers(newRovers);
-        setRoverFilter({ rover: newRovers[0].name, camera: "", page: 1 });
-    }
+const RoverFilter: FC<RoverFilterProps> = () => {
+    const { rovers, roverFilter, setRoverFilter } = useMarsRover();
 
     function handleChange(
         e: React.MouseEvent<HTMLElement, MouseEvent>,
@@ -44,4 +38,4 @@ const RoverFilter = () => {
     );
 };
 
-export default RoverFilter;
+export const RoverFilterWithLoading = withLoading(RoverFilter);
