@@ -2,6 +2,7 @@ type RouteData = {
     path: string;
     name: string;
     description: string;
+    summary: string;
     image: string;
     isMainRoute: boolean;
 };
