@@ -56,7 +56,7 @@ const routes: Routes = {
         isMainRoute: false,
     },
     DETAILS: {
-        path: "/details",
+        path: "/details/:name",
         name: "Details",
         description: "Details about the objects of the app",
         image: detailsImage,
