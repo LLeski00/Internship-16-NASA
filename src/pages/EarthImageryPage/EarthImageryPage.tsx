@@ -1,13 +1,14 @@
-import InteractiveMap from "@/components/InteractiveMap/InteractiveMap";
 import { getSatellitePhoto } from "@/services/earthImageryApi";
 import { SatellitePhotoResponse } from "@/types/eartImagery";
-import { LatLngExpression } from "leaflet";
+import { LatLng } from "leaflet";
 import { useEffect, useState } from "react";
 import "./EarthImageryPage.css";
+import { InteractiveMap } from "@/components";
+import FavouriteLocations from "@/components/FavouriteLocations/FavouriteLocations";
 
 const EarthImageryPage = () => {
     const [imageUrl, setImageUrl] = useState<string | undefined>();
-    const [position, setPosition] = useState<LatLngExpression>([51.5, -0.09]);
+    const [position, setPosition] = useState<LatLng>(new LatLng(51.5, -0.09));
 
     useEffect(() => {
         loadImageUrl();
@@ -17,7 +18,6 @@ const EarthImageryPage = () => {
         const newImageUrl: SatellitePhotoResponse = await getSatellitePhoto(
             position
         );
-        console.log(newImageUrl);
         setImageUrl(newImageUrl.url);
     }
 
@@ -25,6 +25,7 @@ const EarthImageryPage = () => {
         <div className="earth-imagery-page">
             <InteractiveMap position={position} setPosition={setPosition} />
             {imageUrl && <img src={imageUrl} alt="satellite-photo" />}
+            <FavouriteLocations position={position} />
         </div>
     );
 };

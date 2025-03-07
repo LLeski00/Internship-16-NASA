@@ -1,22 +1,23 @@
 import { MapContainer, TileLayer, Marker, useMapEvents } from "react-leaflet";
-import { FC, useState } from "react";
+import { FC } from "react";
 import "leaflet/dist/leaflet.css";
-import { LatLngExpression } from "leaflet";
+import { LatLng } from "leaflet";
 
 interface CustomMarkerProps {
-    position: LatLngExpression;
+    position: LatLng;
     setPosition: Function;
 }
 
 interface InteractiveMapProps {
-    position: LatLngExpression;
+    position: LatLng;
     setPosition: Function;
 }
 
 const CustomMarker: FC<CustomMarkerProps> = ({ position, setPosition }) => {
     const handleMapClick = (e: any) => {
         const { lat, lng } = e.latlng;
-        setPosition([lat, lng]);
+        const newPosition: LatLng = new LatLng(lat, lng);
+        setPosition(newPosition);
     };
 
     useMapEvents({

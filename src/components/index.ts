@@ -9,4 +9,5 @@ export { default as DateFilter } from "@/components/DateFilter/DateFilter";
 export { default as NeoPieChart } from "@/components/NeoPieChart/NeoPieChart";
 export { default as NeoBarChart } from "@/components/NeoBarChart/NeoBarChart";
 export { default as NeoHistogram } from "@/components/NeoHistogram/NeoHistogram";
+export { default as InteractiveMap } from "@/components/InteractiveMap/InteractiveMap";
 export * from "@/components/MarsRover";
