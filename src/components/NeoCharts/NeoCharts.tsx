@@ -1,10 +1,13 @@
 import { FC } from "react";
-import { NeoBarChart, NeoHistogram, NeoPieChart } from "@/components";
+import { NeoBarChart, NeoHistogram } from "@/components";
 import { NeoData } from "@/types/neo";
 import { ChartData, HazardChartType, HistogramType } from "@/types/chart";
+import NeoPieChart from "../NeoPieChart/NeoPieChart";
+import { withLoading } from "@/hoc/WithLoading";
 
 interface NeoChartsProps {
-    neoData: NeoData;
+    neoData: NeoData | null;
+    isLoading: boolean;
 }
 
 const NeoCharts: FC<NeoChartsProps> = ({ neoData }) => {
@@ -13,18 +16,23 @@ const NeoCharts: FC<NeoChartsProps> = ({ neoData }) => {
     const histogramData: HistogramType[] = getHistogramData();
 
     function getBarChartData(): ChartData[] {
-        return Object.entries(neoData)
-            .map(([date, neos]) => ({
-                date,
-                count: neos.length,
-            }))
-            .sort(
-                (a, b) =>
-                    new Date(a.date).getTime() - new Date(b.date).getTime()
-            );
+        return neoData
+            ? Object.entries(neoData)
+                  .map(([date, neos]) => ({
+                      date,
+                      count: neos.length,
+                  }))
+                  .sort(
+                      (a, b) =>
+                          new Date(a.date).getTime() -
+                          new Date(b.date).getTime()
+                  )
+            : [];
     }
 
     function getPieChartData(): HazardChartType[] {
+        if (!neoData) return [];
+
         let { hazardousCount, nonHazardousCount } = Object.values(neoData)
             .flat()
             .reduce(
@@ -44,6 +52,8 @@ const NeoCharts: FC<NeoChartsProps> = ({ neoData }) => {
     }
 
     function getHistogramData(): HistogramType[] {
+        if (!neoData) return [];
+
         const sizeCounter = { small: 0, medium: 0, large: 0 };
 
         Object.values(neoData)
@@ -66,12 +76,16 @@ const NeoCharts: FC<NeoChartsProps> = ({ neoData }) => {
     }
 
     return (
-        <div className="neo-charts">
-            <NeoBarChart chartData={barChartData} />
-            <NeoPieChart chartData={pieChartData} />
-            <NeoHistogram chartData={histogramData} />
-        </div>
+        <>
+            {neoData && (
+                <div className="neo-charts">
+                    <NeoBarChart chartData={barChartData} />
+                    <NeoPieChart chartData={pieChartData} />
+                    <NeoHistogram chartData={histogramData} />
+                </div>
+            )}
+        </>
     );
 };
 
-export default NeoCharts;
+export const NeoChartsWithLoading = withLoading(NeoCharts);

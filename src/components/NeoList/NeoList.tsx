@@ -1,8 +1,10 @@
+import { withLoading } from "@/hoc/WithLoading";
 import { Neo } from "@/types/neo";
 import { FC } from "react";
 
 interface NeoListProps {
     neos: Neo[];
+    isLoading: boolean;
 }
 
 const NeoList: FC<NeoListProps> = ({ neos }) => {
@@ -15,4 +17,4 @@ const NeoList: FC<NeoListProps> = ({ neos }) => {
     );
 };
 
-export default NeoList;
+export const NeoListWithLoading = withLoading(NeoList);

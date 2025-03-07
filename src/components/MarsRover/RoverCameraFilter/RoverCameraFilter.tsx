@@ -39,4 +39,4 @@ const RoverCameraFilter: FC<RoverCameraFilterProps> = () => {
     );
 };
 
-export const RoverCameraFilterWithLoading = withLoading(RoverCameraFilter);
+export default RoverCameraFilter;

@@ -7,3 +7,7 @@
     background-color: var(--light-theme-background-color);
     color: var(--dark-theme-color);
 }
+
+.error-message {
+    color: var(--nasa-red-color);
+}

@@ -1,4 +1,5 @@
 import { RoverImageData } from "@/types/mars";
+import { Button } from "@mui/material";
 import { FC } from "react";
 
 interface MarsRoverImageDetailsProps {
@@ -12,7 +13,7 @@ const MarsRoverImageDetails: FC<MarsRoverImageDetailsProps> = ({
 }) => {
     return (
         <>
-            <button onClick={() => returnToGallery()}>Back</button>
+            <Button onClick={() => returnToGallery()}>Back</Button>
             {image ? (
                 <div className="image-details">
                     <img

@@ -1,5 +1,4 @@
 import { HazardChartType } from "@/types/chart";
-import { Neo, NeoData } from "@/types/neo";
 import { FC } from "react";
 import { PieChart, Pie, Cell, Tooltip, Legend } from "recharts";
 

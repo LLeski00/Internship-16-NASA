@@ -3,9 +3,10 @@ import "./MarsRoverGallery.css";
 import { getMarsRoverImages } from "@/services/marsApi";
 import { useMarsRover } from "@/hooks/UseMarsRover";
 import { RoverImageData } from "@/types/mars";
-import { MarsRoverImageListWithLoading } from "../MarsRoverImageList/MarsRoverImageList";
-import MarsRoverPhotosPagination from "../MarsRoverPhotosPagination/MarsRoverPhotosPagination";
-import MarsRoverPhotosFilter from "../MarsRoverPhotosFilter/MarsRoverPhotosFilter";
+import {
+    MarsRoverImageListWithLoading,
+    MarsRoverPhotosFilter,
+} from "@/components";
 
 interface MarsRoverGalleryProps {
     setSelectedImage: Function;
@@ -48,7 +49,6 @@ const MarsRoverGallery: FC<MarsRoverGalleryProps> = ({ setSelectedImage }) => {
                 isLoading={isLoading}
                 setIsLoading={setIsLoading}
             />
-            <MarsRoverPhotosPagination />
         </>
     );
 };

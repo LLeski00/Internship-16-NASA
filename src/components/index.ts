@@ -6,8 +6,11 @@ export { default as SolarSystemAnimation } from "@/components/SolarSystemAnimati
 export { default as ImageCard } from "@/components/ImageCard/ImageCard";
 export { default as ApodGallery } from "@/components/ApodGallery/ApodGallery";
 export { default as DateFilter } from "@/components/DateFilter/DateFilter";
-export { default as NeoPieChart } from "@/components/NeoPieChart/NeoPieChart";
 export { default as NeoBarChart } from "@/components/NeoBarChart/NeoBarChart";
 export { default as NeoHistogram } from "@/components/NeoHistogram/NeoHistogram";
 export { default as InteractiveMap } from "@/components/InteractiveMap/InteractiveMap";
+export { default as FavouriteLocations } from "@/components/FavouriteLocations/FavouriteLocations";
+export * from "@/components/NeoList/NeoList";
+export * from "@/components/NeoCharts/NeoCharts";
+export * from "@/components/FavouriteLocations/FavouriteLocations";
 export * from "@/components/MarsRover";

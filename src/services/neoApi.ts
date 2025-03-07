@@ -12,8 +12,8 @@ async function fetchNeos(api: string): Promise<NeoResponse | null> {
         if (!response.ok)
             throw new Error(`Response status: ${response.status}`);
 
-        const fetchedImages: NeoResponse = await response.json();
-        return fetchedImages;
+        const fetchedNeos: NeoResponse = await response.json();
+        return fetchedNeos;
     } catch (error) {
         console.error((error as Error).message);
         return null;

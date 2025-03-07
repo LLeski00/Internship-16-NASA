@@ -26,7 +26,7 @@ async function fetchSatellitePhoto(
 
 async function getSatellitePhoto(
     coordinates: LatLng
-): Promise<SatellitePhotoResponse> {
+): Promise<SatellitePhotoResponse | null> {
     const lat: number = coordinates.lat;
     const lng: number = coordinates.lng;
     const dateString = getDateString(new Date("2025-01-01"));
@@ -43,7 +43,6 @@ async function getSatellitePhoto(
     const response: SatellitePhotoResponse | null = await fetchSatellitePhoto(
         api
     );
-    if (!response) throw new Error("The image was not found");
     return response;
 }
 

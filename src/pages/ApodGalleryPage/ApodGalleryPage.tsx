@@ -4,6 +4,8 @@ import { LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { useState } from "react";
 import { DateFilterType } from "@/types/filter";
+import { ErrorBoundary } from "react-error-boundary";
+import { ErrorFallback } from "@/error/ErrorFallback";
 
 const ApodGalleryPage = () => {
     const [dateFilter, setDateFilter] = useState<DateFilterType>();
@@ -19,7 +21,9 @@ const ApodGalleryPage = () => {
             <LocalizationProvider dateAdapter={AdapterDayjs}>
                 <DateFilter setDateFilter={setDateFilter} />
             </LocalizationProvider>
-            <ApodGallery dateFilter={dateFilter} />
+            <ErrorBoundary FallbackComponent={ErrorFallback}>
+                <ApodGallery dateFilter={dateFilter} />
+            </ErrorBoundary>
         </div>
     );
 };

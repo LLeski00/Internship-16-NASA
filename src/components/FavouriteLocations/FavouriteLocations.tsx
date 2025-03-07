@@ -5,9 +5,13 @@ import { FC, useEffect, useState } from "react";
 
 interface FavouriteLocationsProps {
     position: LatLng;
+    setPosition: Function;
 }
 
-const FavouriteLocations: FC<FavouriteLocationsProps> = ({ position }) => {
+const FavouriteLocations: FC<FavouriteLocationsProps> = ({
+    position,
+    setPosition,
+}) => {
     const [favourites, setFavourites] = useState<LatLng[]>([]);
 
     useEffect(() => {
@@ -61,7 +65,9 @@ const FavouriteLocations: FC<FavouriteLocationsProps> = ({ position }) => {
                         key={`${fav.lat}, ${fav.lng}`}
                         className="favourite-location"
                     >
-                        <p>{`${fav.lat}, ${fav.lng}`}</p>
+                        <p
+                            onClick={() => setPosition(fav)}
+                        >{`${fav.lat}, ${fav.lng}`}</p>
                         <Button onClick={() => deleteFavourite(fav)}>
                             Delete
                         </Button>

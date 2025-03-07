@@ -1,5 +1,6 @@
 .date-filter {
     display: flex;
     justify-content: center;
-    align-items: c;
+    align-items: center;
+    gap: 30px;
 }

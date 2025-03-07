@@ -3,7 +3,7 @@ import { useState } from "react";
 interface ErrorHandlerReturn {
     error: Error | null;
     handleError: (error: Error) => void;
-    reset: () => void;
+    resetError: () => void;
 }
 
 export const useErrorHandler = (): ErrorHandlerReturn => {
@@ -14,9 +14,9 @@ export const useErrorHandler = (): ErrorHandlerReturn => {
         setError(err);
     };
 
-    const reset = () => {
+    const resetError = () => {
         setError(null);
     };
 
-    return { error, handleError, reset };
+    return { error, handleError, resetError };
 };

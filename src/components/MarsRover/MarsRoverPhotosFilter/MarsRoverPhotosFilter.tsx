@@ -2,8 +2,7 @@ import { useMarsRover } from "@/hooks/UseMarsRover";
 import { getActiveMarsRovers } from "@/services/marsApi";
 import { Rover } from "@/types/mars";
 import { useEffect, useState } from "react";
-import { RoverFilterWithLoading } from "../RoverFilter/RoverFilter";
-import { RoverCameraFilterWithLoading } from "../RoverCameraFilter/RoverCameraFilter";
+import { RoverFilterWithLoading, RoverCameraFilter } from "@/components";
 
 const MarsRoverPhotosFilter = () => {
     const { rovers, setRovers, setRoverFilter } = useMarsRover();
@@ -23,8 +22,10 @@ const MarsRoverPhotosFilter = () => {
 
     return (
         <>
-            <RoverFilterWithLoading isLoading={isLoading} />
-            <RoverCameraFilterWithLoading isLoading={isLoading} />
+            <>
+                <RoverFilterWithLoading isLoading={isLoading} />
+                <RoverCameraFilter isLoading={isLoading} />
+            </>
         </>
     );
 };

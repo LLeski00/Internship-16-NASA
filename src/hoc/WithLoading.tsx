@@ -1,4 +1,5 @@
 import { ComponentType, FC } from "react";
+import "./WithLoading.css";
 
 export function withLoading<T extends { isLoading: boolean }>(
     WrappedComponent: ComponentType<T>
@@ -7,9 +8,7 @@ export function withLoading<T extends { isLoading: boolean }>(
         return (
             <>
                 <WrappedComponent {...props} />
-                {props.isLoading && (
-                    <div className="loading-spinner">Loading...</div>
-                )}
+                {props.isLoading && <div className="loading-spinner"></div>}
             </>
         );
     };

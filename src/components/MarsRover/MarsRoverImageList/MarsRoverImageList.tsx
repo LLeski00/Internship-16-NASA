@@ -2,6 +2,7 @@ import { RoverImageData } from "@/types/mars";
 import { FC } from "react";
 import "./MarsRoverImageList.css";
 import { withLoading } from "@/hoc/WithLoading";
+import MarsRoverPhotosPagination from "../MarsRoverPhotosPagination/MarsRoverPhotosPagination";
 
 interface MarsRoverImageListProps {
     images: RoverImageData[];
@@ -26,16 +27,19 @@ const MarsRoverImageList: FC<MarsRoverImageListProps> = ({
     }
 
     return (
-        <div className="mars-rover-image-list">
-            {images.map((image) => (
-                <img
-                    onClick={() => handleImageClick(image)}
-                    key={image.id}
-                    src={image.img_src}
-                    alt="mars-rover-photo"
-                />
-            ))}
-        </div>
+        <>
+            <div className="mars-rover-image-list">
+                {images.map((image) => (
+                    <img
+                        onClick={() => handleImageClick(image)}
+                        key={image.id}
+                        src={image.img_src}
+                        alt="mars-rover-photo"
+                    />
+                ))}
+            </div>
+            <MarsRoverPhotosPagination />
+        </>
     );
 };
 
