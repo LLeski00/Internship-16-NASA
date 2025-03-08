@@ -1,5 +1,5 @@
-import { useMarsRover } from "@/hooks/UseMarsRover";
-import { RoverImageData } from "@/types/mars";
+import { useMarsRover } from "@/hooks";
+import { RoverImageData } from "@/types";
 import { Button } from "@mui/material";
 import { FC } from "react";
 import "./MarsRoverPhotosPagination.css";

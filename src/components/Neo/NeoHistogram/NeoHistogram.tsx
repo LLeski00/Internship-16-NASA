@@ -1,4 +1,4 @@
-import { HistogramType } from "@/types/chart";
+import { HistogramType } from "@/types";
 import { FC } from "react";
 import {
     BarChart,

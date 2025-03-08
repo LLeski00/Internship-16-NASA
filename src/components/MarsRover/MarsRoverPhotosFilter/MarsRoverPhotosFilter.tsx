@@ -1,9 +1,8 @@
-import { useMarsRover } from "@/hooks/UseMarsRover";
-import { getActiveMarsRovers } from "@/services/marsApi";
-import { Rover } from "@/types/mars";
+import { useMarsRover, useErrorHandler } from "@/hooks";
+import { getActiveMarsRovers } from "@/services";
+import { Rover } from "@/types";
 import { useEffect, useState } from "react";
 import { RoverFilterWithLoading, RoverCameraFilter } from "@/components";
-import { useErrorHandler } from "@/hooks";
 
 const MarsRoverPhotosFilter = () => {
     const { rovers, setRovers, setRoverFilter } = useMarsRover();

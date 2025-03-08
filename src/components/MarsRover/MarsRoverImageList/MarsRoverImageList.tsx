@@ -1,4 +1,4 @@
-import { RoverImageData } from "@/types/mars";
+import { RoverImageData } from "@/types";
 import { FC } from "react";
 import "./MarsRoverImageList.css";
 import { withLoading } from "@/hoc/WithLoading";

@@ -1,5 +1,5 @@
 import { routes } from "@/constants/routes";
-import { ImageData } from "@/types/image";
+import { ImageData } from "@/types";
 import { FC } from "react";
 import { useNavigate } from "react-router-dom";
 import "./ImageCard.css";

@@ -1,5 +1,5 @@
 import { withLoading } from "@/hoc/WithLoading";
-import { ImageData } from "@/types/image";
+import { ImageData } from "@/types";
 import { FC, useEffect } from "react";
 import "./ImageDetails.css";
 

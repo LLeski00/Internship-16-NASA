@@ -1,8 +1,8 @@
 import { NeoCharts, NeoListWithLoading } from "@/components";
 import { ErrorFallback } from "@/error/ErrorFallback";
 import { useErrorHandler } from "@/hooks";
-import { getNeos } from "@/services/neoApi";
-import { Neo, NeoData } from "@/types/neo";
+import { getNeos } from "@/services";
+import { Neo, NeoData } from "@/types";
 import { useEffect, useState } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import "./NeoTrackerPage.css";

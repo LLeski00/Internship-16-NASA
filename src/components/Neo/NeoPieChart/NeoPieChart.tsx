@@ -1,4 +1,4 @@
-import { HazardChartType } from "@/types/chart";
+import { HazardChartType } from "@/types";
 import { FC } from "react";
 import { PieChart, Pie, Cell, Tooltip, Legend } from "recharts";
 

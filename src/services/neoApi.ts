@@ -1,4 +1,4 @@
-import { NeoData, NeoResponse } from "@/types/neo";
+import { NeoData, NeoResponse } from "@/types";
 
 const NEO_API_URL =
     import.meta.env.VITE_NASA_API_URL +

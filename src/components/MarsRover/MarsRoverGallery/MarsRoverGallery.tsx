@@ -1,14 +1,13 @@
 import { FC, useEffect, useState } from "react";
 import "./MarsRoverGallery.css";
-import { getMarsRoverImages } from "@/services/marsApi";
-import { useMarsRover } from "@/hooks/UseMarsRover";
-import { RoverImageData } from "@/types/mars";
+import { getMarsRoverImages } from "@/services";
+import { useMarsRover, useErrorHandler } from "@/hooks";
+import { RoverImageData } from "@/types";
 import {
     MarsRoverImageListWithLoading,
     MarsRoverPhotosFilter,
     MarsRoverPhotosPagination,
 } from "@/components";
-import { useErrorHandler } from "@/hooks";
 
 interface MarsRoverGalleryProps {
     setSelectedImage: Function;

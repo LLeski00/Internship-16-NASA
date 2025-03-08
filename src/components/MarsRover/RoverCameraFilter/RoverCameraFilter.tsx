@@ -1,5 +1,5 @@
-import { useMarsRover } from "@/hooks/UseMarsRover";
-import { Rover } from "@/types/mars";
+import { useMarsRover } from "@/hooks";
+import { Rover } from "@/types";
 import { InputLabel, MenuItem, Select, SelectChangeEvent } from "@mui/material";
 import { FC } from "react";
 import "./RoverCameraFilter.css";

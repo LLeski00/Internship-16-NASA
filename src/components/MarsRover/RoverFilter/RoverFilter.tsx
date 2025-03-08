@@ -1,6 +1,6 @@
 import { withLoading } from "@/hoc/WithLoading";
-import { useMarsRover } from "@/hooks/UseMarsRover";
-import { Rover } from "@/types/mars";
+import { useMarsRover } from "@/hooks";
+import { Rover } from "@/types";
 import { ToggleButton, ToggleButtonGroup } from "@mui/material";
 import { FC } from "react";
 import "./RoverFilter.css";

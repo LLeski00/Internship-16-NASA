@@ -1,5 +1,4 @@
-import { ApodResponse } from "@/types/apod";
-import { ImageData } from "@/types/image";
+import { ApodResponse, ImageData } from "@/types";
 
 function getImagesDataFromResponse(response: ApodResponse[]): ImageData[] {
     const responseImages: ApodResponse[] = response.filter(

@@ -1,4 +1,4 @@
-import { RouteData } from "@/types/route";
+import { RouteData } from "@/types";
 import { FC } from "react";
 import { Link } from "react-router-dom";
 import "./PageObjectDetails.css";

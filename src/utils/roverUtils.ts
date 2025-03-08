@@ -1,4 +1,4 @@
-import { RoverFilterType } from "@/types/mars";
+import { RoverFilterType } from "@/types";
 
 function createRoverApi(url: string, filters: RoverFilterType): string {
     const roverFilter = "/" + filters.rover.toLowerCase() + "/photos";

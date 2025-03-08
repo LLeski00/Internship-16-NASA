@@ -4,8 +4,8 @@ import {
     RoverImageData,
     RoverImageResponse,
     RoverResponse,
-} from "@/types/mars";
-import { createRoverApi } from "@/utils/roverUtils";
+} from "@/types";
+import { createRoverApi } from "@/utils";
 
 const MARS_ROVER_API_URL: string =
     import.meta.env.VITE_NASA_API_URL + "/mars-photos/api/v1/rovers";

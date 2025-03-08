@@ -1,5 +1,5 @@
-import { ImageData } from "@/types/image";
-import ImageCard from "../ImageCard/ImageCard";
+import { ImageData } from "@/types";
+import { ImageCard } from "@/components";
 import { FC } from "react";
 import { withLoading } from "@/hoc/WithLoading";
 import "./ImageList.css";

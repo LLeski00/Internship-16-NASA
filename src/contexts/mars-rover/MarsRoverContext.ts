@@ -1,4 +1,4 @@
-import { Rover, RoverFilterType } from "@/types/mars";
+import { Rover, RoverFilterType } from "@/types";
 import { createContext, Dispatch, SetStateAction } from "react";
 
 export interface MarsRoverContextType {

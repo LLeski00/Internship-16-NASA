@@ -1,11 +1,13 @@
-import { getSatellitePhoto } from "@/services/earthImageryApi";
-import { SatellitePhotoResponse } from "@/types/eartImagery";
+import { getSatellitePhoto } from "@/services";
+import { SatellitePhotoResponse } from "@/types";
 import { LatLng } from "leaflet";
 import { useEffect, useState } from "react";
 import "./EarthImageryPage.css";
-import { InteractiveMap } from "@/components";
-import FavouriteLocations from "@/components/FavouriteLocations/FavouriteLocations";
-import { SatellitePhotoWithLoading } from "@/components/SatellitePhoto/SatellitePhoto";
+import {
+    InteractiveMap,
+    FavouriteLocations,
+    SatellitePhotoWithLoading,
+} from "@/components";
 import { useErrorHandler } from "@/hooks";
 import { ErrorBoundary } from "react-error-boundary";
 import { ErrorFallback } from "@/error/ErrorFallback";

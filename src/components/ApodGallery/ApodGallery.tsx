@@ -1,11 +1,10 @@
 import { FC, useEffect, useRef, useState } from "react";
-import { ImageData } from "@/types/image";
-import { DateFilterType } from "@/types/filter";
-import { getApodImages } from "@/services/apodApi";
-import { getDateWithOffset } from "@/utils/dateUtils";
+import { ImageData, DateFilterType } from "@/types";
+import { getApodImages } from "@/services";
+import { getDateWithOffset } from "@/utils";
 import "./ApodGallery.css";
 import { useInView } from "react-intersection-observer";
-import { ImageListWithLoading } from "../ImageList/ImageList";
+import { ImageListWithLoading } from "@/components";
 import { useErrorHandler } from "@/hooks";
 
 interface ApodGalleryProps {

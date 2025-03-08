@@ -1,7 +1,6 @@
 import { FC } from "react";
 import { NeoHistogram, NeoPieChart } from "@/components";
-import { NeoData } from "@/types/neo";
-import { HazardChartType, HistogramType } from "@/types/chart";
+import { HazardChartType, HistogramType, NeoData } from "@/types";
 import "./NeoCharts.css";
 
 interface NeoChartsProps {

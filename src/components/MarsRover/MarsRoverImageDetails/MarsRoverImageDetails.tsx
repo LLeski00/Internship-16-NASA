@@ -1,4 +1,4 @@
-import { RoverImageData } from "@/types/mars";
+import { RoverImageData } from "@/types";
 import { Button } from "@mui/material";
 import { FC } from "react";
 import "./MarsRoverImageDetails.css";

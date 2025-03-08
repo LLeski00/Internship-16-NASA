@@ -1,10 +1,9 @@
-import { ApodResponse } from "@/types/apod";
-import { ImageData } from "@/types/image";
+import { ImageData, ApodResponse } from "@/types";
 import {
     getImageDataFromResponse,
     getImagesDataFromResponse,
-} from "@/utils/apodUtils";
-import { getDateString } from "@/utils/dateUtils";
+    getDateString,
+} from "@/utils";
 
 const APOD_API_URL =
     import.meta.env.VITE_NASA_API_URL +

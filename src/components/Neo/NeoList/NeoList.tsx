@@ -1,5 +1,5 @@
 import { withLoading } from "@/hoc/WithLoading";
-import { Neo } from "@/types/neo";
+import { Neo } from "@/types";
 import { FC, useEffect } from "react";
 import "./NeoList.css";
 import { useNavigate } from "react-router-dom";

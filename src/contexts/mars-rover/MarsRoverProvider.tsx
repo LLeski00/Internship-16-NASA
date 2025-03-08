@@ -1,5 +1,5 @@
 import { FC, PropsWithChildren, useState } from "react";
-import { Rover, RoverFilterType } from "@/types/mars";
+import { Rover, RoverFilterType } from "@/types";
 import { MarsRoverContext } from "./MarsRoverContext";
 
 export const MarsRoverProvider: FC<PropsWithChildren> = ({ children }) => {

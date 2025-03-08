@@ -3,7 +3,7 @@ import "./ApodGalleryPage.css";
 import { LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { useState } from "react";
-import { DateFilterType } from "@/types/filter";
+import { DateFilterType } from "@/types";
 import { ErrorBoundary } from "react-error-boundary";
 import { ErrorFallback } from "@/error/ErrorFallback";
 

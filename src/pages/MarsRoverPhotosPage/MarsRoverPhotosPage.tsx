@@ -1,6 +1,6 @@
 import { MarsRoverGallery, MarsRoverImageDetails } from "@/components";
 import "./MarsRoverPhotosPage.css";
-import { RoverImageData } from "@/types/mars";
+import { RoverImageData } from "@/types";
 import { useState } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import { ErrorFallback } from "@/error/ErrorFallback";

@@ -1,5 +1,5 @@
-import { SatellitePhotoResponse } from "@/types/eartImagery";
-import { getDateString } from "@/utils/dateUtils";
+import { SatellitePhotoResponse } from "@/types";
+import { getDateString } from "@/utils";
 import { LatLng } from "leaflet";
 
 const EARTH_IMAGERY_API_URL =
