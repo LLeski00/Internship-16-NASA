@@ -10,15 +10,12 @@ interface ImageCardProps {
 
 const ImageCard: FC<ImageCardProps> = ({ data }) => {
     const navigate = useNavigate();
+    const detailsUrl = routes.IMAGE_DETAILS.path.split(":")[0];
 
     return (
         <img
             className="image-card"
-            onClick={() =>
-                navigate(
-                    `/${routes.IMAGE_DETAILS.path.split("/")[1]}/${data.date}`
-                )
-            }
+            onClick={() => navigate(`${detailsUrl}${data.date}`)}
             src={data.url}
             alt={data.title}
         ></img>

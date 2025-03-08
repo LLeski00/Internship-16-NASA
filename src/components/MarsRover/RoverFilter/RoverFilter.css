@@ -11,6 +11,3 @@ body.dark-theme .MuiButtonBase-root {
 body.dark-theme .Mui-selected {
     background-color: var(--nasa-blue-color);
 }
-
-body.dark-theme .MuiButtonBase-root {
-}

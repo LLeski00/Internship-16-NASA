@@ -1,5 +1,5 @@
 .earth-imagery-page {
-    padding-inline: 50px;
+    padding: 0px 50px 30px 50px;
 }
 
 .earth-imagery-page > h1 {
@@ -8,7 +8,8 @@
 }
 
 .earth-imagery-page > p {
-    width: 500px;
+    font-size: 20px;
+    width: 700px;
     margin-inline: auto;
     margin: 20px auto 50px auto;
 }

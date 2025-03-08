@@ -1,5 +1,6 @@
 import { Button } from "@mui/material";
 import { FC } from "react";
+import "./ErrorFallback.css";
 
 interface ErrorFallbackProps {
     error: Error;
@@ -11,7 +12,7 @@ export const ErrorFallback: FC<ErrorFallbackProps> = ({
     resetErrorBoundary,
 }) => {
     return (
-        <div>
+        <div className="error-fallback">
             <p className="error-message">Error: {error.message}</p>
             <Button onClick={resetErrorBoundary} variant="contained">
                 Try again

@@ -10,6 +10,7 @@
 
 .error-message {
     color: var(--nasa-red-color);
+    text-align: center;
 }
 
 .milky-way-background {

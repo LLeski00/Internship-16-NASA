@@ -55,16 +55,8 @@ const routes: Routes = {
         isMainRoute: true,
     },
     IMAGE_DETAILS: {
-        path: "/images/:date",
+        path: "/apod/images/:date",
         name: "Image details",
-        description: "",
-        summary: "",
-        image: "",
-        isMainRoute: false,
-    },
-    MARS_ROVER_IMAGE_DETAILS: {
-        path: "mars-rover/images/:id",
-        name: "Mars Rover Image details",
         description: "",
         summary: "",
         image: "",

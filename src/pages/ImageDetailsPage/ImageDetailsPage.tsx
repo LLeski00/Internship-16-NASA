@@ -1,33 +1,53 @@
+import { ImageDetailsWithLoading } from "@/components/ImageDetails/ImageDetails";
+import { ErrorFallback } from "@/error/ErrorFallback";
+import { useErrorHandler } from "@/hooks";
 import { getApodImageByDate } from "@/services/apodApi";
 import { ImageData } from "@/types/image";
 import { isDateStringValid } from "@/utils/dateUtils";
 import { useEffect, useState } from "react";
+import { ErrorBoundary } from "react-error-boundary";
 import { useParams } from "react-router-dom";
 
 const ImageDetailsPage = () => {
     const { date } = useParams<{ date: string }>();
     const [image, setImage] = useState<ImageData>();
+    const [isLoading, setIsLoading] = useState<boolean>(false);
+    const { error, handleError } = useErrorHandler();
 
     useEffect(() => {
         loadImageData();
     }, []);
 
     async function loadImageData() {
-        if (date === undefined) throw new Error("The date is undefined");
-        if (!isDateStringValid(date)) throw new Error("The date is invalid");
-        const image: ImageData = await getApodImageByDate(new Date(date));
+        setIsLoading(true);
+        if (date === undefined) {
+            handleError(new Error("The date is undefined"));
+            return;
+        }
+        if (!isDateStringValid(date)) {
+            handleError(new Error("The date is invalid"));
+            return;
+        }
+        const image: ImageData | null = await getApodImageByDate(
+            new Date(date)
+        );
+        if (!image) {
+            handleError(new Error("The image was not found"));
+            return;
+        }
         setImage(image);
+        setIsLoading(false);
     }
 
     return (
         <>
-            {image && (
-                <div className="image-details">
-                    <img src={image.url} alt={image.title} />
-                    <h2>{image.title}</h2>
-                    <p>{image.explanation}</p>
-                </div>
-            )}
+            <ErrorBoundary FallbackComponent={ErrorFallback}>
+                <ImageDetailsWithLoading
+                    image={image}
+                    isLoading={isLoading}
+                    error={error}
+                />
+            </ErrorBoundary>
         </>
     );
 };
