@@ -1,0 +1,25 @@
+.hamburger__icon {
+    font-size: 50px;
+    color: var(--light-theme-color);
+}
+
+.hamburger__menu {
+    background-color: var(--nasa-blue-color);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    position: absolute;
+    font-size: 20px;
+    top: 100px;
+    left: 0;
+    width: 100%;
+}
+
+body.dark-theme .hamburger__menu {
+    background-color: var(--dark-theme-background-color);
+}
+
+.hamburger__menu > * {
+    padding: 20px;
+}

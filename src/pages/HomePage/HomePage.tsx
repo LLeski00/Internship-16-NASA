@@ -5,6 +5,7 @@ import milkyWayImage from "@/assets/images/milky-way.jpeg";
 const HomePage = () => {
     return (
         <div className="home-page">
+            <h1>Welcome to NASA Explorer</h1>
             <img
                 className="milky-way-background"
                 src={milkyWayImage}

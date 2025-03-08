@@ -5,3 +5,18 @@
     width: 100%;
     padding: 50px 0px;
 }
+
+@media (max-width: 2230px) {
+    .navigation-card-list {
+        justify-content: flex-start;
+        overflow-x: auto;
+    }
+}
+
+@media (max-width: 1200px) {
+    .navigation-card-list {
+        gap: 25px;
+        width: 100%;
+        padding: 50px 0px;
+    }
+}

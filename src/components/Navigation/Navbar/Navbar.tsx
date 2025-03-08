@@ -3,6 +3,7 @@ import "./Navbar.css";
 import { routes } from "@/constants/routes";
 import { useTheme } from "@/hooks";
 import { Button } from "@mui/material";
+import { Hamburger } from "@/components";
 
 const Navbar = () => {
     const { isDarkTheme, toggleTheme } = useTheme();
@@ -35,6 +36,7 @@ const Navbar = () => {
             >
                 Toggle theme
             </Button>
+            <Hamburger />
         </nav>
     );
 };

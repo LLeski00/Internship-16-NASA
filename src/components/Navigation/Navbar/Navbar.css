@@ -28,3 +28,20 @@ nav a {
     transition: transform 0.2s linear;
     transform: scale(1.1);
 }
+
+nav .hamburger {
+    display: none;
+}
+
+@media (max-width: 1200px) {
+    .navbar-links {
+        display: none;
+    }
+    nav > button {
+        display: none !important;
+    }
+
+    nav .hamburger {
+        display: block;
+    }
+}

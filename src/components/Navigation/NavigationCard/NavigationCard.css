@@ -29,3 +29,25 @@
 .navigation-card-content {
     padding-inline: 40px;
 }
+
+@media (max-width: 1200px) {
+    .navigation-card {
+        width: 300px;
+        height: 500px;
+    }
+    .navigation-card-content p {
+        display: none;
+    }
+}
+
+@media (max-width: 800px) {
+    .navigation-card {
+        width: 100px;
+        height: 300px;
+        font-size: 10px;
+    }
+
+    .navigation-card-content {
+        padding-inline: 0px;
+    }
+}
