@@ -19,11 +19,33 @@ const Hamburger = () => {
             </div>
             {isOpen && (
                 <div className="hamburger__menu">
-                    <Link to={routes.HOME.path}>Home</Link>
-                    <Link to={routes.APOD.path}>APOD</Link>
-                    <Link to={routes.MARS_ROVER.path}>Mars Rover</Link>
-                    <Link to={routes.EARTH_IMAGERY.path}>Earth Imagery</Link>
-                    <Link to={routes.NEO.path}>NEO</Link>
+                    <Link
+                        to={routes.HOME.path}
+                        onClick={() => setIsOpen(false)}
+                    >
+                        Home
+                    </Link>
+                    <Link
+                        to={routes.APOD.path}
+                        onClick={() => setIsOpen(false)}
+                    >
+                        APOD
+                    </Link>
+                    <Link
+                        to={routes.MARS_ROVER.path}
+                        onClick={() => setIsOpen(false)}
+                    >
+                        Mars Rover
+                    </Link>
+                    <Link
+                        to={routes.EARTH_IMAGERY.path}
+                        onClick={() => setIsOpen(false)}
+                    >
+                        Earth Imagery
+                    </Link>
+                    <Link to={routes.NEO.path} onClick={() => setIsOpen(false)}>
+                        NEO
+                    </Link>
                     <Button
                         onClick={toggleTheme}
                         variant="contained"

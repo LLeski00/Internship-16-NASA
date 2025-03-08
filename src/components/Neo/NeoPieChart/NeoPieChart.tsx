@@ -7,7 +7,7 @@ interface NeoPieChartProps {
 }
 
 const NeoPieChart: FC<NeoPieChartProps> = ({ chartData }) => {
-    const COLORS = ["#FF5733", "#33FF57"];
+    const COLORS = ["#FF0000", "#0B3D91"];
 
     return (
         <PieChart width={400} height={400}>

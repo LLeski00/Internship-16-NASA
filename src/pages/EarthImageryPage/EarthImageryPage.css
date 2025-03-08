@@ -17,3 +17,12 @@
 .earth-imagery-page > img {
     width: 500px;
 }
+
+@media (max-width: 800px) {
+    .earth-imagery-page > p {
+        font-size: 20px;
+        width: 300px;
+        margin-inline: auto;
+        margin: 20px auto 50px auto;
+    }
+}

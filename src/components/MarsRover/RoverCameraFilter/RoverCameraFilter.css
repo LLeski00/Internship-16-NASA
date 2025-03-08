@@ -25,3 +25,9 @@ body.dark-theme .MuiDateCalendar-root .MuiButtonBase-root {
 body.dark-theme .MuiDateCalendar-root .Mui-disabled {
     color: rgb(194, 194, 194);
 }
+
+@media (max-width: 800px) {
+    .rover-camera-filter > div {
+        width: 300px;
+    }
+}

@@ -24,7 +24,7 @@ const NEOSizeHistogram: FC<NeoHistogramProps> = ({ chartData }) => {
                 <YAxis />
                 <Tooltip />
                 <Legend />
-                <Bar dataKey="count" fill="#8884d8" />
+                <Bar dataKey="count" fill="#0B3D91" />
             </BarChart>
         </ResponsiveContainer>
     );

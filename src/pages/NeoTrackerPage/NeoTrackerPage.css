@@ -16,3 +16,15 @@
     margin-top: 50px;
     text-align: center;
 }
+
+@media (max-width: 1200px) {
+    .neo-tracker-page > p {
+        width: 500px;
+    }
+}
+
+@media (max-width: 800px) {
+    .neo-tracker-page > p {
+        width: 300px;
+    }
+}

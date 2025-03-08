@@ -32,3 +32,25 @@ body.dark-theme .favourite-location {
 .favourite-location:hover {
     transform: scale(1.1);
 }
+
+@media (max-width: 2230px) {
+    .favourites-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 1600px) {
+    .favourites-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .favourites-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+}

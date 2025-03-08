@@ -2,7 +2,6 @@ import { withLoading } from "@/hoc/WithLoading";
 import { Neo } from "@/types";
 import { FC, useEffect } from "react";
 import "./NeoList.css";
-import { useNavigate } from "react-router-dom";
 
 interface NeoListProps {
     neos: Neo[];
@@ -11,8 +10,6 @@ interface NeoListProps {
 }
 
 const NeoList: FC<NeoListProps> = ({ neos, error }) => {
-    const navigate = useNavigate();
-
     useEffect(() => {
         if (error) throw new Error(error.message);
     }, [error]);
