@@ -23,3 +23,7 @@ body.dark-theme .hamburger__menu {
 .hamburger__menu > * {
     padding: 20px;
 }
+
+.hamburger__menu > button {
+    margin-bottom: 20px;
+}
