@@ -1,0 +1,7 @@
+.mars-rover-image-details {
+    padding-inline: 50px;
+}
+
+.mars-rover-image-details > button {
+    margin: 20px 0px 0px 150px;
+}

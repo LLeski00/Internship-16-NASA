@@ -1,0 +1,18 @@
+.neo-tracker-page {
+    padding: 0px 50px 20px 50px;
+}
+
+.neo-tracker-page > h1 {
+    text-align: center;
+    margin-top: 70px;
+}
+
+.neo-tracker-page > p {
+    width: 1000px;
+    margin: 20px auto 70px auto;
+}
+
+.neo-tracker-page > h2 {
+    margin-top: 50px;
+    text-align: center;
+}

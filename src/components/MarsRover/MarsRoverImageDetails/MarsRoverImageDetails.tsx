@@ -1,6 +1,7 @@
 import { RoverImageData } from "@/types/mars";
 import { Button } from "@mui/material";
 import { FC } from "react";
+import "./MarsRoverImageDetails.css";
 
 interface MarsRoverImageDetailsProps {
     image: RoverImageData;
@@ -12,7 +13,7 @@ const MarsRoverImageDetails: FC<MarsRoverImageDetailsProps> = ({
     returnToGallery,
 }) => {
     return (
-        <>
+        <div className="mars-rover-image-details">
             <Button onClick={() => returnToGallery()} variant="contained">
                 Back
             </Button>
@@ -22,14 +23,16 @@ const MarsRoverImageDetails: FC<MarsRoverImageDetailsProps> = ({
                         src={image.img_src}
                         alt={`${image.rover.name}-image`}
                     />
-                    <h2>Camera: {image.camera.full_name}</h2>
-                    <p>Date: {image.earth_date}</p>
-                    <p>Rover: {image.rover.name}</p>
+                    <div className="image-details-content">
+                        <h2>Camera: {image.camera.full_name}</h2>
+                        <p>Date: {image.earth_date}</p>
+                        <p>Rover: {image.rover.name}</p>
+                    </div>
                 </div>
             ) : (
                 <p>Image not found.</p>
             )}
-        </>
+        </div>
     );
 };
 

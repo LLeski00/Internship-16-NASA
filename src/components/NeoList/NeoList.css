@@ -1,0 +1,11 @@
+.neo-list {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+}
+
+.neo {
+    background-color: rgb(51, 51, 51);
+    padding: 10px;
+}

@@ -1,6 +1,7 @@
 import { withLoading } from "@/hoc/WithLoading";
 import { ImageData } from "@/types/image";
 import { FC, useEffect } from "react";
+import "./ImageDetails.css";
 
 interface ImageDetailsProps {
     image: ImageData | undefined;
@@ -14,15 +15,18 @@ const ImageDetails: FC<ImageDetailsProps> = ({ image, error }) => {
     }, [error]);
 
     return (
-        <div className="image-details">
+        <>
             {image && (
                 <div className="image-details">
                     <img src={image.url} alt={image.title} />
-                    <h2>{image.title}</h2>
-                    <p>{image.explanation}</p>
+                    <article className="image-details-content">
+                        <h2>{image.title}</h2>
+                        <p>Date: {image.date}</p>
+                        <p>{image.explanation}</p>
+                    </article>
                 </div>
             )}
-        </div>
+        </>
     );
 };
 

@@ -1,31 +1,16 @@
 import { FC } from "react";
-import { NeoBarChart, NeoHistogram, NeoPieChart } from "@/components";
+import { NeoHistogram, NeoPieChart } from "@/components";
 import { NeoData } from "@/types/neo";
-import { ChartData, HazardChartType, HistogramType } from "@/types/chart";
+import { HazardChartType, HistogramType } from "@/types/chart";
+import "./NeoCharts.css";
 
 interface NeoChartsProps {
     neoData: NeoData | null;
 }
 
 const NeoCharts: FC<NeoChartsProps> = ({ neoData }) => {
-    const barChartData: ChartData[] = getBarChartData();
     const pieChartData: HazardChartType[] = getPieChartData();
     const histogramData: HistogramType[] = getHistogramData();
-
-    function getBarChartData(): ChartData[] {
-        return neoData
-            ? Object.entries(neoData)
-                  .map(([date, neos]) => ({
-                      date,
-                      count: neos.length,
-                  }))
-                  .sort(
-                      (a, b) =>
-                          new Date(a.date).getTime() -
-                          new Date(b.date).getTime()
-                  )
-            : [];
-    }
 
     function getPieChartData(): HazardChartType[] {
         if (!neoData) return [];
@@ -76,8 +61,9 @@ const NeoCharts: FC<NeoChartsProps> = ({ neoData }) => {
         <>
             {neoData && (
                 <div className="neo-charts">
-                    <NeoBarChart chartData={barChartData} />
+                    <h2>Pie chart of hazardous/unhazardous NEOs</h2>
                     <NeoPieChart chartData={pieChartData} />
+                    <h2>Histogram of categorized NEOs by size in meters</h2>
                     <NeoHistogram chartData={histogramData} />
                 </div>
             )}
