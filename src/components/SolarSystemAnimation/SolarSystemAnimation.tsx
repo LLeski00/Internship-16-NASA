@@ -1,4 +1,4 @@
-import "@/components/SolarSystemAnimation/SolarSystemAnimation.css";
+import "./SolarSystemAnimation.css";
 import sunImage from "@/assets/images/sun.png";
 import mercuryImage from "@/assets/images/mercury.png";
 import venusImage from "@/assets/images/venus.png";

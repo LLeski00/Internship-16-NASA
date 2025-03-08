@@ -4,12 +4,16 @@ export { default as NavigationCard } from "@/components/NavigationCard/Navigatio
 export { default as NavigationCardList } from "@/components/NavigationCardList/NavigationCardList";
 export { default as SolarSystemAnimation } from "@/components/SolarSystemAnimation/SolarSystemAnimation";
 export { default as ImageCard } from "@/components/ImageCard/ImageCard";
+export * from "@/components/ImageDetails/ImageDetails";
 export { default as ApodGallery } from "@/components/ApodGallery/ApodGallery";
 export { default as DateFilter } from "@/components/DateFilter/DateFilter";
+export { default as NeoPieChart } from "@/components/NeoPieChart/NeoPieChart";
 export { default as NeoBarChart } from "@/components/NeoBarChart/NeoBarChart";
 export { default as NeoHistogram } from "@/components/NeoHistogram/NeoHistogram";
 export { default as InteractiveMap } from "@/components/InteractiveMap/InteractiveMap";
 export { default as FavouriteLocations } from "@/components/FavouriteLocations/FavouriteLocations";
+export { default as PageObjectDetails } from "@/components/PageObjectDetails/PageObjectDetails";
+export * from "@/components/SatellitePhoto/SatellitePhoto";
 export * from "@/components/NeoList/NeoList";
 export { default as NeoCharts } from "@/components/NeoCharts/NeoCharts";
 export * from "@/components/FavouriteLocations/FavouriteLocations";

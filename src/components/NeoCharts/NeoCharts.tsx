@@ -1,8 +1,7 @@
 import { FC } from "react";
-import { NeoBarChart, NeoHistogram } from "@/components";
+import { NeoBarChart, NeoHistogram, NeoPieChart } from "@/components";
 import { NeoData } from "@/types/neo";
 import { ChartData, HazardChartType, HistogramType } from "@/types/chart";
-import NeoPieChart from "../NeoPieChart/NeoPieChart";
 
 interface NeoChartsProps {
     neoData: NeoData | null;

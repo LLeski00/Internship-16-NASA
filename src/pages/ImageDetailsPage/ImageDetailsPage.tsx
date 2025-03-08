@@ -1,4 +1,4 @@
-import { ImageDetailsWithLoading } from "@/components/ImageDetails/ImageDetails";
+import { ImageDetailsWithLoading } from "@/components";
 import { ErrorFallback } from "@/error/ErrorFallback";
 import { useErrorHandler } from "@/hooks";
 import { getApodImageByDate } from "@/services/apodApi";
@@ -7,6 +7,7 @@ import { isDateStringValid } from "@/utils/dateUtils";
 import { useEffect, useState } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import { useParams } from "react-router-dom";
+import "./ImageDetailsPage.css";
 
 const ImageDetailsPage = () => {
     const { date } = useParams<{ date: string }>();
@@ -40,7 +41,7 @@ const ImageDetailsPage = () => {
     }
 
     return (
-        <>
+        <div className="image-details-page">
             <ErrorBoundary FallbackComponent={ErrorFallback}>
                 <ImageDetailsWithLoading
                     image={image}
@@ -48,7 +49,7 @@ const ImageDetailsPage = () => {
                     error={error}
                 />
             </ErrorBoundary>
-        </>
+        </div>
     );
 };
 

@@ -1,7 +1,7 @@
 import { RouteData } from "@/types/route";
 import { FC } from "react";
 import { useNavigate } from "react-router-dom";
-import "@/components/NavigationCard/NavigationCard.css";
+import "./NavigationCard.css";
 import { routes } from "@/constants/routes";
 import { useTheme } from "@/hooks";
 

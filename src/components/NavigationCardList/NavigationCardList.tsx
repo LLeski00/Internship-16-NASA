@@ -1,6 +1,6 @@
 import { routes } from "@/constants/routes";
 import { NavigationCard } from "@/components";
-import "@/components/NavigationCardList/NavigationCardList.css";
+import "./NavigationCardList.css";
 
 const NavigationCardList = () => {
     const navigationRoutes = Object.values(routes).filter(

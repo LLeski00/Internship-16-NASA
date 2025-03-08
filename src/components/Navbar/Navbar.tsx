@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "@/components/Navbar/Navbar.css";
+import "./Navbar.css";
 import { routes } from "@/constants/routes";
 import { useTheme } from "@/hooks";
 import { Button } from "@mui/material";

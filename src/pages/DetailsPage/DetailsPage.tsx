@@ -1,4 +1,4 @@
-import PageObjectDetails from "@/components/PageObjectDetails/PageObjectDetails";
+import { PageObjectDetails } from "@/components";
 import { routes } from "@/constants/routes";
 import { useErrorHandler } from "@/hooks";
 import { RouteData } from "@/types/route";
